@@ -3,110 +3,98 @@
     "name": "Serenity",
     "handle": "@aleabitoreddit",
     "label": "KOL",
-    "followers": "27.10万",
-    "contentCount": 863,
+    "followers": "32.3万",
+    "contentCount": "7K+",
     "trackingSince": "2026 - 至今",
     "location": "全球",
     "avatar": "avatar-serenity.png"
   },
   "summary": {
-    "date": "2026-05-22",
-    "totalItems": 44,
-    "filteredItems": 8,
-    "published": 9,
-    "stockRelated": 8,
-    "topTheme": "CPO",
+    "date": "2026-04-24 至 2026-05-24",
+    "totalItems": 63,
+    "filteredItems": 23,
+    "published": 23,
+    "stockRelated": 23,
+    "topTheme": "CPO / 光子学",
     "completePlans": 0,
-    "risk": "未看到明确入场价、止损、仓位或完整交易计划。内容更接近产业叙事、战绩复盘和主题观察，不能直接视作交易信号。"
+    "risk": "近30天内容主要是产业链叙事、财报/催化复盘和高信念观察；没有看到系统化入场价、止损、仓位或完整交易计划。所有立场均为信息整理，不构成投资建议。"
   },
   "filters": {
     "stance": [
-      { "name": "强看多", "count": 3, "tone": "strongBull" },
-      { "name": "看多", "count": 2, "tone": "bull" },
-      { "name": "中性", "count": 1, "tone": "neutral" },
+      { "name": "强看多", "count": 8, "tone": "strongBull" },
+      { "name": "看多", "count": 11, "tone": "bull" },
+      { "name": "中性", "count": 2, "tone": "neutral" },
       { "name": "谨慎", "count": 1, "tone": "caution" },
       { "name": "看空", "count": 1, "tone": "bear" }
     ],
     "dimensions": [
-      { "name": "宏观", "count": 0 },
-      { "name": "行业", "count": 6 },
-      { "name": "个股", "count": 37 },
-      { "name": "概念", "count": 1 }
+      { "name": "宏观", "count": 1 },
+      { "name": "行业", "count": 11 },
+      { "name": "个股", "count": 23 },
+      { "name": "概念", "count": 7 }
     ]
   },
   "signals": [
     {
       "ticker": "SIVE",
       "stance": "强看多",
-      "confidence": "高置信",
+      "confidence": "最高频主线",
       "dimension": "个股",
-      "summary": "当天最高频主线。围绕 CPO、光互连、AI 供应链、NASDAQ 流动性/上市 float 与潜在并购资金用途展开。",
-      "observations": 5,
-      "sourceCount": 12,
-      "updatedAt": "2026-05-22"
+      "summary": "近30天最核心标的。她反复强调 SIVE 是 CPO/1.6T 光学转型中的激光 chokepoint，类比下一代 LITE；催化包括董事会转向美国/全球光子学、MSCI/Nasdaq Stockholm 被动资金、AMZN-AlChip-Ayar 生态映射、NASDAQ 上市与潜在并购/IP 扩张。",
+      "observations": 14,
+      "sourceCount": 18,
+      "updatedAt": "2026-05-24"
     },
     {
-      "ticker": "RKLB",
-      "stance": "看多",
-      "confidence": "催化",
-      "dimension": "个股",
-      "summary": "提到约 9000 万美元 US Space Force 合同。她认为金额本身不大，但强化美国太空建设叙事。",
-      "observations": 2,
-      "sourceCount": 4,
-      "updatedAt": "2026-05-22"
-    },
-    {
-      "ticker": "FUTU / TIGR",
-      "stance": "看空",
-      "confidence": "风险",
-      "dimension": "个股",
-      "summary": "提到中国监管与历史收入相关风险，语气偏谨慎，不是做多信号。",
-      "observations": 1,
-      "sourceCount": 2,
-      "updatedAt": "2026-05-22"
-    },
-    {
-      "ticker": "AXTI / SOI / IQE",
+      "ticker": "AAOI",
       "stance": "强看多",
-      "confidence": "产业链",
-      "dimension": "行业",
-      "summary": "作为光学、半导体、量子/玻璃瓶颈链条观察或历史复盘出现，和 CPO 主线形成延展。",
-      "observations": 4,
-      "sourceCount": 9,
-      "updatedAt": "2026-05-22"
-    },
-    {
-      "ticker": "LPK.DE / ALRIB.PA",
-      "stance": "看多",
-      "confidence": "欧洲链条",
-      "dimension": "行业",
-      "summary": "提到欧洲量子、光学、玻璃瓶颈相关股票上涨，用作海外产业链映射观察。",
-      "observations": 1,
-      "sourceCount": 3,
-      "updatedAt": "2026-05-22"
-    },
-    {
-      "ticker": "RDDT / IREN",
-      "stance": "中性",
-      "confidence": "复盘",
+      "confidence": "光通信制造规模",
       "dimension": "个股",
-      "summary": "更多是社群互动或历史表现复盘，未形成清晰的新交易计划。",
-      "observations": 1,
-      "sourceCount": 2,
-      "updatedAt": "2026-05-22"
-    }
-  ],
-  "topics": [
-    { "name": "半导体", "count": 38, "tone": "blue" },
-    { "name": "AI", "count": 33, "tone": "pink" },
-    { "name": "CPO", "count": 31, "tone": "orange" },
-    { "name": "加密货币", "count": 16, "tone": "green" },
-    { "name": "人形机器人", "count": 13, "tone": "sky" }
-  ],
-  "contentTypes": [
-    { "name": "文字", "percent": 45, "count": 388, "color": "#f59e0b" },
-    { "name": "图片", "percent": 25, "count": 215, "color": "#ec4899" },
-    { "name": "视频", "percent": 20, "count": 172, "color": "#8b5cf6" },
-    { "name": "音频", "percent": 10, "count": 86, "color": "#3b82f6" }
-  ]
-}
+      "summary": "她把 AAOI 归为光学制造规模和收入 ramp 逻辑，称自己对 AAOI 极度看多；近期还用 AAOI 打爆空头叙事、财报后下跌被误读、2027 年高增长公司不应只看当期财务来表达正面观点。",
+      "observations": 6,
+      "sourceCount": 8,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "LITE",
+      "stance": "强看多",
+      "confidence": "光学龙头锚点",
+      "dimension": "个股",
+      "summary": "LITE 被她当作 CPO/光子学重估的龙头锚点，反复用来类比 SIVE 的潜在路径；她提到 LITE 在 Google TPU/AI 光学 BOM 中位置重要，并认为相关小盘光学股会被算法/资金与 LITE 绑定交易。",
+      "observations": 5,
+      "sourceCount": 7,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "AXTI / IQE",
+      "stance": "强看多",
+      "confidence": "InP 衬底瓶颈",
+      "dimension": "行业",
+      "summary": "她复盘 AXTI/InP 衬底瓶颈判断，并引用 IntelliEPI Q1 2026 财报中 InP 短缺成为 AI 基础设施瓶颈的说法；同时提到 IQE 过去数月涨幅明显，作为光子学上游验证案例。",
+      "observations": 5,
+      "sourceCount": 6,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "TSEM",
+      "stance": "强看多",
+      "confidence": "光基代工产能",
+      "dimension": "个股",
+      "summary": "TSEM 被她归为 light-based stuff 需要的 foundry。她近期提到 TSEM 额外支付约 2.9 亿美元预付款以确保产能，并认为下游代工产能紧张会直接传导到上游基板/材料需求。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-13"
+    },
+    {
+      "ticker": "NBIS",
+      "stance": "强看多",
+      "confidence": "Neocloud 高信念",
+      "dimension": "个股",
+      "summary": "她称 NBIS 财报强劲，重申 2026 年 70-90 亿美元 ARR、约 40% 调整后 EBITDA 利润率、4GW 签约容量和 NVDA 支持的融资结构；并把 NBIS 类比成下一代 AWS/平台型基础设施公司。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-13"
+    },
+    {
+      "ticker": "LPK.DE / GLW / ASGLY / NIDGY",
+      "stance": "看多",
