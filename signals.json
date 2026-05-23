@@ -98,3 +98,197 @@
     {
       "ticker": "LPK.DE / GLW / ASGLY / NIDGY",
       "stance": "看多",
+      "confidence": "玻璃基板链",
+      "dimension": "行业",
+      "summary": "她整理过玻璃基板关键玩家：LPK 代表 TGV 设备，GLW 代表玻璃材料，ASGLY/NIDGY 等为玻璃材料或制程链条；逻辑来自 AI 先进封装、玻璃基板量产节奏提前和 CoPoS/先进封装趋势。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-10"
+    },
+    {
+      "ticker": "RDDT",
+      "stance": "看多",
+      "confidence": "非AI成长",
+      "dimension": "个股",
+      "summary": "她称 RDDT 是少数非 AI 名字中仍然非常有吸引力的公司，理由是增长速度快、财报后盈利质量改善，并对其跑输市场表示不理解。",
+      "observations": 2,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-08"
+    },
+    {
+      "ticker": "FLNC",
+      "stance": "看多",
+      "confidence": "超大云客户合同",
+      "dimension": "个股",
+      "summary": "她提到 FLNC 盘前因两个直接 hyperscaler 合同预期上涨约 18.66%，认为小市值公司拿到这类合同通常可能带来估值重估。",
+      "observations": 2,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-08"
+    },
+    {
+      "ticker": "INTC",
+      "stance": "看多",
+      "confidence": "美国制造/国家安全",
+      "dimension": "个股",
+      "summary": "在近30天 US-available watchlist 中，她把 INTC 定位为美国 foundry 与国家安全希望；近期半导体动态里也提到 AAPL 转向 INTC 代工是重大变化。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "MRVL",
+      "stance": "看多",
+      "confidence": "AI ASIC / CPO",
+      "dimension": "个股",
+      "summary": "MRVL 被她放在 AI ASIC、Maia 相关增量和 CPO 附加价值链中；在 SIVE 叙事里也多次作为潜在 CPO 生态客户或链条节点出现。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "TSM",
+      "stance": "看多",
+      "confidence": "半导体底座",
+      "dimension": "个股",
+      "summary": "她把 TSM 称为 semis/AI 的 backbone，并在近期半导体 TLDR 中提到 TSM 推动 CoPoS、2026 年 4 月营收同比增长约 30%。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-09"
+    },
+    {
+      "ticker": "COHR",
+      "stance": "看多",
+      "confidence": "垂直整合光学",
+      "dimension": "个股",
+      "summary": "COHR 被她列入光学周期受益股，理由是垂直整合能力和捕捉光学上行周期；她也用 COHR/LITE 的路径类比 SIVE 未来可能的下游 IP 或垂直整合。",
+      "observations": 2,
+      "sourceCount": 3,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "RKLB",
+      "stance": "看多",
+      "confidence": "太空/国防叙事",
+      "dimension": "个股",
+      "summary": "她在近30天 watchlist 和周五推文中多次提到 RKLB，长期逻辑是太空经济/最终 frontier；短期提到 US Space Force 合同增强国防太空叙事。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "AVGO / AMZN / GOOGL / META",
+      "stance": "看多",
+      "confidence": "Mega-cap AI 平台",
+      "dimension": "行业",
+      "summary": "她把 AVGO 归入 hyperscaler 不想长期缴纳 GPU tax 的 ASIC 受益链；AMZN 受益电商和机器人降本，同时与 AlChip/Trainium 生态关联；GOOGL 有 YouTube、Gemini、TPU 垂直整合；META 则是 Instagram/WhatsApp 等消费互联网现金流平台。",
+      "observations": 4,
+      "sourceCount": 5,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "AMKR / JBL / FN / SMTC",
+      "stance": "看多",
+      "confidence": "先进封装/组装",
+      "dimension": "行业",
+      "summary": "这些标的被她放在 AI 光学和先进封装的制造/组装环节：AMKR 受益美国先进封装设施，FN/JBL 负责光学装配，SMTC 关联 LRO/LPO 转换。",
+      "observations": 4,
+      "sourceCount": 5,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "MU / SNDK / Samsung / SK Hynix",
+      "stance": "看多",
+      "confidence": "存储价格/短缺",
+      "dimension": "行业",
+      "summary": "她在近期半导体 TLDR 中提到 2D NAND 短缺、DRAM/NAND 合约价格大幅上涨，以及大型科技公司愿意资助 SK Hynix 扩产，认为对 MU、SNDK、Samsung、SK Hynix 等存储链正面。",
+      "observations": 3,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-09"
+    },
+    {
+      "ticker": "ARM",
+      "stance": "看多",
+      "confidence": "AGI CPU 叙事",
+      "dimension": "个股",
+      "summary": "她在 watchlist 中把 ARM 归为未来十年 AGI CPU 规模化收入受益者，并把 ARM 列入自己已验证的高回报 thesis 名单。",
+      "observations": 2,
+      "sourceCount": 3,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "MP / LPTH",
+      "stance": "看多",
+      "confidence": "美国供应链安全",
+      "dimension": "行业",
+      "summary": "MP 被她归入美国稀土计划和国家安全；LPTH 则与锗材料、中国出口控制和美国工程替代方案相关，是供应链安全主题的一部分。",
+      "observations": 2,
+      "sourceCount": 3,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "HIMS / HOOD / CRCL",
+      "stance": "看多",
+      "confidence": "非AI消费/金融科技",
+      "dimension": "行业",
+      "summary": "她对 HOOD 短期不一定喜欢但长期看好其零售金融产品扩张；CRCL 被放在稳定币/支付未来主题；HIMS 作为全球 DTC 渠道和并购扩张后的反向多头候选。",
+      "observations": 3,
+      "sourceCount": 3,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "FUTU / TIGR",
+      "stance": "看空",
+      "confidence": "监管风险",
+      "dimension": "个股",
+      "summary": "她在周五推文中对 FUTU/TIGR 语气偏谨慎，主要围绕中国监管与历史收入相关风险；这类内容更像风险提示，不是做多信号。",
+      "observations": 1,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "IREN",
+      "stance": "谨慎",
+      "confidence": "融资/稀释风险",
+      "dimension": "个股",
+      "summary": "她近期提到自己曾在 IREN 较高位置看空，并指出 NVDA 不会给其提供资金，若要为 5GW 容量购买 GPU 需要其他融资；可转债相较 ATM 更好，但仍属于资金结构风险观察。",
+      "observations": 1,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-24"
+    },
+    {
+      "ticker": "30-stock watchlist",
+      "stance": "中性",
+      "confidence": "观察清单",
+      "dimension": "概念",
+      "summary": "她近30天发过一条 US-available 30 股票清单，包含 INTC、MRVL、TSM、COHR、RKLB、DRAM、AVGO、AMZN、ARM、TSEM、IBIT、NBIS、GOOGL、AMKR、HOOD、CRCL、META、LITE、LPTH、FN、JBL、MP、HIMS、SMTC、POWL、VPG、MOG.A、MSFT、CVX、XLU。该清单是偏长期观察，不是完整交易计划。",
+      "observations": 1,
+      "sourceCount": 1,
+      "updatedAt": "2026-04-24"
+    }
+  ],
+  "topics": [
+    { "name": "CPO/光子学", "count": 46, "tone": "blue" },
+    { "name": "AI 半导体", "count": 42, "tone": "pink" },
+    { "name": "先进封装", "count": 25, "tone": "orange" },
+    { "name": "Neocloud", "count": 18, "tone": "green" },
+    { "name": "国防/太空", "count": 12, "tone": "sky" }
+  ],
+  "contentTypes": [
+    { "name": "个股 thesis", "percent": 50, "count": 32, "color": "#f59e0b" },
+    { "name": "财报/催化", "percent": 25, "count": 16, "color": "#ec4899" },
+    { "name": "复盘/战绩", "percent": 15, "count": 10, "color": "#8b5cf6" },
+    { "name": "风险提示", "percent": 10, "count": 6, "color": "#3b82f6" }
+  ],
+  "sourceNotes": [
+    {
+      "name": "TwStalker profile mirror",
+      "url": "https://mobile.twstalker.com/aleabitoreddit",
+      "note": "用于读取近期公开推文流、相对时间和互动数据；可能有延迟或截断。"
+    },
+    {
+      "name": "InvestCopilot/Sourcing",
+      "url": "https://investcopilot.cloud/?days=30&twitter_author=aleabitoreddit",
+      "note": "用于交叉验证 2026-05-08 至 2026-05-15 的聚合摘要。"
+    }
+  ]
+}
