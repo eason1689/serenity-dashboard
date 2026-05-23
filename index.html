@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Serenity 股票情报看板</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="profile-panel" aria-label="账号概览">
+        <div class="profile-main">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h1 id="profileName">Serenity</h1>
+            <div class="pill quiet" id="profileLabel">KOL</div>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="icon-button" type="button" aria-label="关注提醒">Bell</button>
+          <button class="more-button" type="button" aria-label="更多">...</button>
+        </div>
+        <div class="profile-stats" id="profileStats"></div>
+        <div class="channels">
+          <article class="channel-card">
+            <div class="channel-icon twitter-dot"></div>
+            <div>
+              <h2>Twitter</h2>
+              <p><strong id="contentCount">863</strong> 内容</p>
+            </div>
+            <span id="followers">27.10万</span>
+          </article>
+          <article class="channel-card dashed">
+            <div class="channel-icon plus-dot">+</div>
+            <div>
+              <h2>新增频道</h2>
+              <p>支持更多平台接入</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="内容导航">
+        <button class="tab" type="button">内容流</button>
+        <button class="tab active" type="button">Wiki</button>
+        <button class="tab" type="button">交易信号</button>
+      </nav>
+
+      <div class="dashboard-grid">
+        <section class="content-column">
+          <section class="filter-panel" aria-label="筛选条件">
+            <div class="filter-row">
+              <strong>立场</strong>
+              <div class="chips" id="stanceChips"></div>
+            </div>
+            <div class="filter-row">
+              <strong>维度</strong>
+              <div class="chips" id="dimensionChips"></div>
+            </div>
+            <div class="filter-footer">
+              <span id="filterCount">筛选后：8 / 44</span>
+              <button type="button">清除筛选</button>
+            </div>
+          </section>
+
+          <div class="section-title">
+            <span class="chart-mark" aria-hidden="true"></span>
+            <h2>个股 · <span id="signalCount">8</span> 条</h2>
+          </div>
+          <section class="signal-grid" id="signalGrid" aria-label="股票信息卡"></section>
+        </section>
+
+        <aside class="side-column">
+          <section class="side-card">
+            <h2>数据概览</h2>
+            <div class="sparkline" aria-hidden="true">
+              <svg viewBox="0 0 260 120" role="img">
+                <polyline points="5,70 28,84 44,90 58,66 78,76 92,58 116,61 132,86 154,70 174,66 198,74 214,30 228,82 244,24 255,66"></polyline>
+              </svg>
+            </div>
+            <div class="metric-list" id="metrics"></div>
+          </section>
+
+          <section class="side-card">
+            <h2>内容类型分布</h2>
+            <div class="donut-wrap">
+              <div class="donut"><span>863<small>全部内容</small></span></div>
+            </div>
+            <div class="legend" id="contentTypes"></div>
+          </section>
+
+          <section class="side-card">
+            <h2>热门话题</h2>
+            <div class="topic-cloud" id="topics"></div>
+          </section>
+
+          <section class="risk-card">
+            <h2>风险标记</h2>
+            <p id="riskText"></p>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

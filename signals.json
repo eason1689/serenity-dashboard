@@ -1,0 +1,112 @@
+{
+  "profile": {
+    "name": "Serenity",
+    "handle": "@aleabitoreddit",
+    "label": "KOL",
+    "followers": "27.10万",
+    "contentCount": 863,
+    "trackingSince": "2026 - 至今",
+    "location": "全球",
+    "avatar": "avatar-serenity.png"
+  },
+  "summary": {
+    "date": "2026-05-22",
+    "totalItems": 44,
+    "filteredItems": 8,
+    "published": 9,
+    "stockRelated": 8,
+    "topTheme": "CPO",
+    "completePlans": 0,
+    "risk": "未看到明确入场价、止损、仓位或完整交易计划。内容更接近产业叙事、战绩复盘和主题观察，不能直接视作交易信号。"
+  },
+  "filters": {
+    "stance": [
+      { "name": "强看多", "count": 3, "tone": "strongBull" },
+      { "name": "看多", "count": 2, "tone": "bull" },
+      { "name": "中性", "count": 1, "tone": "neutral" },
+      { "name": "谨慎", "count": 1, "tone": "caution" },
+      { "name": "看空", "count": 1, "tone": "bear" }
+    ],
+    "dimensions": [
+      { "name": "宏观", "count": 0 },
+      { "name": "行业", "count": 6 },
+      { "name": "个股", "count": 37 },
+      { "name": "概念", "count": 1 }
+    ]
+  },
+  "signals": [
+    {
+      "ticker": "SIVE",
+      "stance": "强看多",
+      "confidence": "高置信",
+      "dimension": "个股",
+      "summary": "当天最高频主线。围绕 CPO、光互连、AI 供应链、NASDAQ 流动性/上市 float 与潜在并购资金用途展开。",
+      "observations": 5,
+      "sourceCount": 12,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "RKLB",
+      "stance": "看多",
+      "confidence": "催化",
+      "dimension": "个股",
+      "summary": "提到约 9000 万美元 US Space Force 合同。她认为金额本身不大，但强化美国太空建设叙事。",
+      "observations": 2,
+      "sourceCount": 4,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "FUTU / TIGR",
+      "stance": "看空",
+      "confidence": "风险",
+      "dimension": "个股",
+      "summary": "提到中国监管与历史收入相关风险，语气偏谨慎，不是做多信号。",
+      "observations": 1,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "AXTI / SOI / IQE",
+      "stance": "强看多",
+      "confidence": "产业链",
+      "dimension": "行业",
+      "summary": "作为光学、半导体、量子/玻璃瓶颈链条观察或历史复盘出现，和 CPO 主线形成延展。",
+      "observations": 4,
+      "sourceCount": 9,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "LPK.DE / ALRIB.PA",
+      "stance": "看多",
+      "confidence": "欧洲链条",
+      "dimension": "行业",
+      "summary": "提到欧洲量子、光学、玻璃瓶颈相关股票上涨，用作海外产业链映射观察。",
+      "observations": 1,
+      "sourceCount": 3,
+      "updatedAt": "2026-05-22"
+    },
+    {
+      "ticker": "RDDT / IREN",
+      "stance": "中性",
+      "confidence": "复盘",
+      "dimension": "个股",
+      "summary": "更多是社群互动或历史表现复盘，未形成清晰的新交易计划。",
+      "observations": 1,
+      "sourceCount": 2,
+      "updatedAt": "2026-05-22"
+    }
+  ],
+  "topics": [
+    { "name": "半导体", "count": 38, "tone": "blue" },
+    { "name": "AI", "count": 33, "tone": "pink" },
+    { "name": "CPO", "count": 31, "tone": "orange" },
+    { "name": "加密货币", "count": 16, "tone": "green" },
+    { "name": "人形机器人", "count": 13, "tone": "sky" }
+  ],
+  "contentTypes": [
+    { "name": "文字", "percent": 45, "count": 388, "color": "#f59e0b" },
+    { "name": "图片", "percent": 25, "count": 215, "color": "#ec4899" },
+    { "name": "视频", "percent": 20, "count": 172, "color": "#8b5cf6" },
+    { "name": "音频", "percent": 10, "count": 86, "color": "#3b82f6" }
+  ]
+}
