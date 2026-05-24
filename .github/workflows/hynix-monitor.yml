@@ -1,0 +1,38 @@
+name: Hynix 07709 deviation monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 1-8 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Monitor 07709 deviation
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: npm run monitor:hynix
+
+      - name: Commit monitor state
+        run: |
+          if git diff --quiet -- hynix-monitor-state.json; then
+            echo "No monitor state changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hynix-monitor-state.json
+          git commit -m "Update Hynix monitor state"
+          git push
