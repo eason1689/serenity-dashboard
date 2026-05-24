@@ -15,7 +15,7 @@
     "filteredItems": 23,
     "published": 23,
     "stockRelated": 23,
-    "topTheme": "CPO / 光子学",
+    "topTheme": "CPO/光子学",
     "completePlans": 0,
     "risk": "近30天内容主要是产业链叙事、财报/催化复盘和高信念观察；没有看到系统化入场价、止损、仓位或完整交易计划。所有立场均为信息整理，不构成投资建议。"
   },
@@ -364,13 +364,13 @@
     }
   ],
   "automation": {
-    "lastRunAt": "2026-05-23T20:03:05.007Z",
+    "lastRunAt": "2026-05-24T05:21:33.873Z",
     "account": "@aleabitoreddit",
     "sourceStatus": [
       {
         "url": "https://mobile.twstalker.com/aleabitoreddit",
         "ok": false,
-        "status": 0
+        "status": 403
       },
       {
         "url": "https://investcopilot.cloud/?days=30&twitter_author=aleabitoreddit",
@@ -378,6 +378,8 @@
         "status": 200
       }
     ],
-    "touchedTickers": []
+    "touchedTickers": [
+      "AXTI"
+    ]
   }
 }
