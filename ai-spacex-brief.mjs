@@ -68,7 +68,7 @@ function parseRss(xml, limit = 8) {
 }
 
 async function fetchRss(query, limit = 8) {
-  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(`${query} when:1d`)}&hl=en-US&gl=US&ceid=US:en`;
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(`${query} when:1d`)}&hl=zh-CN&gl=HK&ceid=HK:zh-Hans`;
   const response = await fetch(url, {
     headers: {
       "user-agent": "Mozilla/5.0 ai-spacex-brief/1.0",
