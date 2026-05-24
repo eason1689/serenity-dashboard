@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "update:signals": "node scripts/update-signals.mjs",
+   "update:signals": "node update-signals.mjs",
     "check:signals": "node -e \"JSON.parse(require('fs').readFileSync('signals.json','utf8')); console.log('signals.json ok')\""
   }
 }
