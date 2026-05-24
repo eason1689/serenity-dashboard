@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const SIGNALS_PATH = new URL("../signals.json", import.meta.url);
+const SIGNALS_PATH = new URL("./signals.json", import.meta.url);
 const DASHBOARD_URL = "https://eason1689.github.io/serenity-dashboard/";
 const ACCOUNT = "@aleabitoreddit";
 
