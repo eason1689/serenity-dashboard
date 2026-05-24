@@ -1,0 +1,13 @@
+{
+  "date": "",
+  "signals": {
+    "strong": {
+      "armed": true,
+      "lastDeviation": null
+    },
+    "weak": {
+      "armed": true,
+      "lastDeviation": null
+    }
+  }
+}
