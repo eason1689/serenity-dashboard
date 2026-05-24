@@ -21,17 +21,49 @@
   },
   "filters": {
     "stance": [
-      { "name": "强看多", "count": 8, "tone": "strongBull" },
-      { "name": "看多", "count": 11, "tone": "bull" },
-      { "name": "中性", "count": 2, "tone": "neutral" },
-      { "name": "谨慎", "count": 1, "tone": "caution" },
-      { "name": "看空", "count": 1, "tone": "bear" }
+      {
+        "name": "强看多",
+        "count": 6,
+        "tone": "strongBull"
+      },
+      {
+        "name": "看多",
+        "count": 14,
+        "tone": "bull"
+      },
+      {
+        "name": "中性",
+        "count": 1,
+        "tone": "neutral"
+      },
+      {
+        "name": "谨慎",
+        "count": 1,
+        "tone": "caution"
+      },
+      {
+        "name": "看空",
+        "count": 1,
+        "tone": "bear"
+      }
     ],
     "dimensions": [
-      { "name": "宏观", "count": 1 },
-      { "name": "行业", "count": 11 },
-      { "name": "个股", "count": 23 },
-      { "name": "概念", "count": 7 }
+      {
+        "name": "宏观",
+        "count": 0
+      },
+      {
+        "name": "行业",
+        "count": 7
+      },
+      {
+        "name": "个股",
+        "count": 15
+      },
+      {
+        "name": "概念",
+        "count": 1
+      }
     ]
   },
   "signals": [
@@ -267,17 +299,57 @@
     }
   ],
   "topics": [
-    { "name": "CPO/光子学", "count": 46, "tone": "blue" },
-    { "name": "AI 半导体", "count": 42, "tone": "pink" },
-    { "name": "先进封装", "count": 25, "tone": "orange" },
-    { "name": "Neocloud", "count": 18, "tone": "green" },
-    { "name": "国防/太空", "count": 12, "tone": "sky" }
+    {
+      "name": "CPO/光子学",
+      "count": 46,
+      "tone": "blue"
+    },
+    {
+      "name": "AI 半导体",
+      "count": 42,
+      "tone": "pink"
+    },
+    {
+      "name": "先进封装",
+      "count": 25,
+      "tone": "orange"
+    },
+    {
+      "name": "Neocloud",
+      "count": 18,
+      "tone": "green"
+    },
+    {
+      "name": "国防/太空",
+      "count": 12,
+      "tone": "sky"
+    }
   ],
   "contentTypes": [
-    { "name": "个股 thesis", "percent": 50, "count": 32, "color": "#f59e0b" },
-    { "name": "财报/催化", "percent": 25, "count": 16, "color": "#ec4899" },
-    { "name": "复盘/战绩", "percent": 15, "count": 10, "color": "#8b5cf6" },
-    { "name": "风险提示", "percent": 10, "count": 6, "color": "#3b82f6" }
+    {
+      "name": "个股 thesis",
+      "percent": 50,
+      "count": 32,
+      "color": "#f59e0b"
+    },
+    {
+      "name": "财报/催化",
+      "percent": 25,
+      "count": 16,
+      "color": "#ec4899"
+    },
+    {
+      "name": "复盘/战绩",
+      "percent": 15,
+      "count": 10,
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "风险提示",
+      "percent": 10,
+      "count": 6,
+      "color": "#3b82f6"
+    }
   ],
   "sourceNotes": [
     {
@@ -290,5 +362,22 @@
       "url": "https://investcopilot.cloud/?days=30&twitter_author=aleabitoreddit",
       "note": "用于交叉验证 2026-05-08 至 2026-05-15 的聚合摘要。"
     }
-  ]
+  ],
+  "automation": {
+    "lastRunAt": "2026-05-23T20:03:05.007Z",
+    "account": "@aleabitoreddit",
+    "sourceStatus": [
+      {
+        "url": "https://mobile.twstalker.com/aleabitoreddit",
+        "ok": false,
+        "status": 0
+      },
+      {
+        "url": "https://investcopilot.cloud/?days=30&twitter_author=aleabitoreddit",
+        "ok": true,
+        "status": 200
+      }
+    ],
+    "touchedTickers": []
+  }
 }

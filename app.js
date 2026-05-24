@@ -14,7 +14,7 @@ const profileStats = [
 ];
 
 async function loadDashboard() {
- const response = await fetch("./signals.json");
+  const response = await fetch("./signals.json");
   const data = await response.json();
 
   renderProfile(data.profile);
