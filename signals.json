@@ -85,7 +85,11 @@
         "currency": "USD",
         "priceSource": null,
         "priceUpdatedAt": null,
-        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -108,7 +112,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:19",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 181.49
+        "firstTrackedPrice": 181.49,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -131,7 +139,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 946.9
+        "firstTrackedPrice": 946.9,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -154,7 +166,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 140.83
+        "firstTrackedPrice": 140.83,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-25",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -177,7 +193,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 283.43
+        "firstTrackedPrice": 283.43,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-13",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -200,7 +220,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 214.77
+        "firstTrackedPrice": 214.77,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-13",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -223,7 +247,11 @@
         "priceUpdatedAt": "2026-05-22 17:30:00",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 24.8
+        "firstTrackedPrice": 24.8,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-10",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -246,7 +274,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:24",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 141.67
+        "firstTrackedPrice": 141.67,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-08",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -269,7 +301,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 21.49
+        "firstTrackedPrice": 21.49,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-08",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -292,7 +328,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:19",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 119.84
+        "firstTrackedPrice": 119.84,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -315,7 +355,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 196.33
+        "firstTrackedPrice": 196.33,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -338,7 +382,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:24",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 404.52
+        "firstTrackedPrice": 404.52,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-09",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -361,7 +409,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:20",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 377.57
+        "firstTrackedPrice": 377.57,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -384,7 +436,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 135.76
+        "firstTrackedPrice": 135.76,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-22",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -407,7 +463,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 414.14
+        "firstTrackedPrice": 414.14,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -430,7 +490,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 65.75
+        "firstTrackedPrice": 65.75,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -453,7 +517,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 751
+        "firstTrackedPrice": 751,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-09",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -476,7 +544,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:18",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 306.51
+        "firstTrackedPrice": 306.51,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -499,7 +571,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:24",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 64.46
+        "firstTrackedPrice": 64.46,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -522,7 +598,11 @@
         "priceUpdatedAt": "2026-05-22 22:00:21",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
-        "firstTrackedPrice": 23.75
+        "firstTrackedPrice": 23.75,
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -543,7 +623,11 @@
         "currency": "USD",
         "priceSource": null,
         "priceUpdatedAt": null,
-        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-22",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -564,7 +648,11 @@
         "currency": "USD",
         "priceSource": null,
         "priceUpdatedAt": null,
-        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "backfillStartDate": "2026-03-01",
+        "backfillStatus": "price-unavailable",
+        "backfillCandidateDate": "2026-05-24",
+        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
       }
     },
     {
@@ -585,7 +673,9 @@
         "currency": "USD",
         "priceSource": null,
         "priceUpdatedAt": null,
-        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "backfillStatus": "skipped",
+        "backfillNote": "没有可映射到行情源的主 ticker。"
       }
     }
   ],
@@ -672,5 +762,22 @@
     "touchedTickers": [
       "AXTI"
     ]
+  },
+  "backfill": {
+    "startDate": "2026-03-01",
+    "lastRunAt": "2026-05-25T17:33:46.998Z",
+    "sourceStatus": [
+      {
+        "url": "https://investcopilot.cloud/?days=120&twitter_author=aleabitoreddit",
+        "ok": true,
+        "status": 200
+      },
+      {
+        "url": "https://mobile.twstalker.com/aleabitoreddit",
+        "ok": false,
+        "status": 403
+      }
+    ],
+    "note": "首次提及日期由公开源自动推断；对高价值标的建议人工复核原推。"
   }
 }
