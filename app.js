@@ -13,6 +13,64 @@ const profileStats = [
   ["位置", "location"]
 ];
 
+function formatPrice(value, currency = "USD") {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "待回填";
+  const amount = Number(value);
+  return `${currency} ${amount.toLocaleString("en-US", {
+    minimumFractionDigits: amount >= 100 ? 2 : 3,
+    maximumFractionDigits: amount >= 100 ? 2 : 3
+  })}`;
+}
+
+function formatPct(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "待计算";
+  const amount = Number(value);
+  const sign = amount > 0 ? "+" : "";
+  return `${sign}${amount.toFixed(2)}%`;
+}
+
+function renderPerformance(performance) {
+  if (!performance) {
+    return `
+      <div class="performance pending">
+        <div>
+          <span>首次提及</span>
+          <strong>待回填</strong>
+        </div>
+        <div>
+          <span>当前价</span>
+          <strong>待更新</strong>
+        </div>
+        <div>
+          <span>累计表现</span>
+          <strong>待计算</strong>
+        </div>
+      </div>
+    `;
+  }
+
+  const changeClass = Number(performance.changePct) >= 0 ? "positive" : "negative";
+  return `
+    <div class="performance">
+      <div>
+        <span>首次提及</span>
+        <strong>${performance.firstMentionDate || "待回填"}</strong>
+        <small>${formatPrice(performance.firstMentionPrice, performance.currency)}</small>
+      </div>
+      <div>
+        <span>当前价</span>
+        <strong>${formatPrice(performance.currentPrice, performance.currency)}</strong>
+        <small>${performance.priceUpdatedAt || performance.priceSource || "待更新"}</small>
+      </div>
+      <div>
+        <span>累计表现</span>
+        <strong class="${changeClass}">${formatPct(performance.changePct)}</strong>
+        <small>${performance.priceSource || "行情源待确认"}</small>
+      </div>
+    </div>
+  `;
+}
+
 async function loadDashboard() {
   const response = await fetch("./signals.json");
   const data = await response.json();
@@ -71,6 +129,7 @@ function renderSignals(signals) {
           <span class="signal-confidence">· ${signal.confidence}</span>
         </div>
         <p>${signal.summary}</p>
+        ${renderPerformance(signal.performance)}
         <div class="signal-meta">
           ${signal.observations} 次观察 / ${signal.sourceCount} 条原推 · 更新于 ${signal.updatedAt}
         </div>

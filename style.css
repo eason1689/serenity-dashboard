@@ -392,6 +392,51 @@ h1 {
   line-height: 1.65;
 }
 
+.performance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 12px;
+  background: #f7f9fd;
+  border: 1px solid #e3e8f2;
+  border-radius: 12px;
+}
+
+.performance div {
+  min-width: 0;
+}
+
+.performance span,
+.performance small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.performance strong {
+  display: block;
+  margin: 3px 0;
+  font-size: 15px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.performance .positive {
+  color: var(--green);
+}
+
+.performance .negative {
+  color: var(--red);
+}
+
+.performance.pending strong {
+  color: #8a90a0;
+}
+
 .signal-meta {
   color: #8a90a0;
   font-size: 14px;
@@ -610,5 +655,9 @@ h1 {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .performance {
+    grid-template-columns: 1fr;
   }
 }

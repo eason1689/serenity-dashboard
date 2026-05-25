@@ -25,6 +25,51 @@ const TOPIC_HINTS = [
   { name: "国防/太空", tickers: ["RKLB"] }
 ];
 
+const QUOTE_SYMBOLS = {
+  SIVE: { sourceSymbol: "sive.us", displaySymbol: "SIVE", currency: "USD" },
+  AAOI: { sourceSymbol: "aaoi.us", displaySymbol: "AAOI", currency: "USD" },
+  LITE: { sourceSymbol: "lite.us", displaySymbol: "LITE", currency: "USD" },
+  AXTI: { sourceSymbol: "axti.us", displaySymbol: "AXTI", currency: "USD" },
+  IQE: { sourceSymbol: "iqe.uk", displaySymbol: "IQE", currency: "GBP" },
+  TSEM: { sourceSymbol: "tsem.us", displaySymbol: "TSEM", currency: "USD" },
+  NBIS: { sourceSymbol: "nbis.us", displaySymbol: "NBIS", currency: "USD" },
+  LPK: { sourceSymbol: "lpk.de", displaySymbol: "LPK.DE", currency: "EUR" },
+  GLW: { sourceSymbol: "glw.us", displaySymbol: "GLW", currency: "USD" },
+  ASGLY: { sourceSymbol: "asgly.us", displaySymbol: "ASGLY", currency: "USD" },
+  NIDGY: { sourceSymbol: "nidgy.us", displaySymbol: "NIDGY", currency: "USD" },
+  RDDT: { sourceSymbol: "rddt.us", displaySymbol: "RDDT", currency: "USD" },
+  FLNC: { sourceSymbol: "flnc.us", displaySymbol: "FLNC", currency: "USD" },
+  INTC: { sourceSymbol: "intc.us", displaySymbol: "INTC", currency: "USD" },
+  MRVL: { sourceSymbol: "mrvl.us", displaySymbol: "MRVL", currency: "USD" },
+  TSM: { sourceSymbol: "tsm.us", displaySymbol: "TSM", currency: "USD" },
+  COHR: { sourceSymbol: "cohr.us", displaySymbol: "COHR", currency: "USD" },
+  RKLB: { sourceSymbol: "rklb.us", displaySymbol: "RKLB", currency: "USD" },
+  AVGO: { sourceSymbol: "avgo.us", displaySymbol: "AVGO", currency: "USD" },
+  AMZN: { sourceSymbol: "amzn.us", displaySymbol: "AMZN", currency: "USD" },
+  GOOGL: { sourceSymbol: "googl.us", displaySymbol: "GOOGL", currency: "USD" },
+  META: { sourceSymbol: "meta.us", displaySymbol: "META", currency: "USD" },
+  AMKR: { sourceSymbol: "amkr.us", displaySymbol: "AMKR", currency: "USD" },
+  JBL: { sourceSymbol: "jbl.us", displaySymbol: "JBL", currency: "USD" },
+  FN: { sourceSymbol: "fn.us", displaySymbol: "FN", currency: "USD" },
+  SMTC: { sourceSymbol: "smtc.us", displaySymbol: "SMTC", currency: "USD" },
+  MU: { sourceSymbol: "mu.us", displaySymbol: "MU", currency: "USD" },
+  SNDK: { sourceSymbol: "sndk.us", displaySymbol: "SNDK", currency: "USD" },
+  ARM: { sourceSymbol: "arm.us", displaySymbol: "ARM", currency: "USD" },
+  MP: { sourceSymbol: "mp.us", displaySymbol: "MP", currency: "USD" },
+  LPTH: { sourceSymbol: "lpth.us", displaySymbol: "LPTH", currency: "USD" },
+  HIMS: { sourceSymbol: "hims.us", displaySymbol: "HIMS", currency: "USD" },
+  HOOD: { sourceSymbol: "hood.us", displaySymbol: "HOOD", currency: "USD" },
+  CRCL: { sourceSymbol: "crcl.us", displaySymbol: "CRCL", currency: "USD" },
+  FUTU: { sourceSymbol: "futu.us", displaySymbol: "FUTU", currency: "USD" },
+  TIGR: { sourceSymbol: "tigr.us", displaySymbol: "TIGR", currency: "USD" },
+  IREN: { sourceSymbol: "iren.us", displaySymbol: "IREN", currency: "USD" },
+  MSFT: { sourceSymbol: "msft.us", displaySymbol: "MSFT", currency: "USD" },
+  CVX: { sourceSymbol: "cvx.us", displaySymbol: "CVX", currency: "USD" },
+  XLU: { sourceSymbol: "xlu.us", displaySymbol: "XLU", currency: "USD" },
+  POWL: { sourceSymbol: "powl.us", displaySymbol: "POWL", currency: "USD" },
+  VPG: { sourceSymbol: "vpg.us", displaySymbol: "VPG", currency: "USD" }
+};
+
 function todayInShanghai() {
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone: "Asia/Shanghai",
@@ -49,6 +94,123 @@ function dateNDaysAgoShanghai(days) {
 
   const get = (type) => parts.find((part) => part.type === type)?.value;
   return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+function parseCsvLine(line) {
+  const values = [];
+  let current = "";
+  let quoted = false;
+
+  for (const char of line) {
+    if (char === "\"") {
+      quoted = !quoted;
+    } else if (char === "," && !quoted) {
+      values.push(current);
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+
+  values.push(current);
+  return values;
+}
+
+function primaryTicker(signal) {
+  const candidates = signal.ticker
+    .split("/")
+    .flatMap((part) => part.split(","))
+    .map((part) => part.trim().replace(/^\$/, "").replace(/\s.+$/, "").replace(/\(.+\)/, ""))
+    .filter(Boolean);
+
+  return candidates.find((ticker) => QUOTE_SYMBOLS[ticker.replace(/\.DE|\.PA/g, "")])
+    ?.replace(/\.DE|\.PA/g, "");
+}
+
+async function fetchQuote(ticker) {
+  const config = QUOTE_SYMBOLS[ticker];
+  if (!config) return null;
+
+  const url = `https://stooq.com/q/l/?s=${encodeURIComponent(config.sourceSymbol)}&f=sd2t2ohlcv&h&e=csv`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: { "user-agent": "Mozilla/5.0 serenity-dashboard-updater/1.0" }
+    });
+
+    if (!response.ok) return null;
+    const lines = (await response.text()).trim().split(/\r?\n/);
+    if (lines.length < 2) return null;
+
+    const [symbol, date, time, open, high, low, close, volume] = parseCsvLine(lines[1]);
+    const price = Number(close);
+    if (!Number.isFinite(price) || price <= 0) return null;
+
+    return {
+      ticker,
+      displaySymbol: config.displaySymbol,
+      currency: config.currency,
+      price,
+      priceSource: "Stooq",
+      priceUpdatedAt: `${date} ${time}`,
+      sourceSymbol: symbol,
+      volume
+    };
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function updatePerformance(data, today) {
+  const tickers = [...new Set(data.signals.map(primaryTicker).filter(Boolean))];
+  const quotes = new Map();
+
+  await Promise.all(tickers.map(async (ticker) => {
+    const quote = await fetchQuote(ticker);
+    if (quote) quotes.set(ticker, quote);
+  }));
+
+  for (const signal of data.signals) {
+    const ticker = primaryTicker(signal);
+    const quote = quotes.get(ticker);
+
+    if (!signal.performance) {
+      signal.performance = {
+        primaryTicker: ticker || null,
+        firstMentionDate: signal.firstMentionDate || null,
+        firstMentionPrice: signal.firstMentionPrice ?? null,
+        currentPrice: null,
+        changePct: null,
+        currency: quote?.currency || "USD",
+        priceSource: quote?.priceSource || null,
+        priceUpdatedAt: null,
+        note: "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+      };
+    }
+
+    if (!ticker || !quote) continue;
+
+    signal.performance.primaryTicker = quote.displaySymbol;
+    signal.performance.currency = quote.currency;
+    signal.performance.currentPrice = quote.price;
+    signal.performance.priceSource = quote.priceSource;
+    signal.performance.priceUpdatedAt = quote.priceUpdatedAt;
+
+    if (!signal.performance.firstMentionDate && !signal.performance.firstMentionPrice) {
+      signal.performance.firstTrackedDate = today;
+      signal.performance.firstTrackedPrice = quote.price;
+    }
+
+    const basePrice = Number(signal.performance.firstMentionPrice ?? signal.performance.firstTrackedPrice);
+    if (Number.isFinite(basePrice) && basePrice > 0) {
+      signal.performance.changePct = ((quote.price - basePrice) / basePrice) * 100;
+    }
+  }
 }
 
 function decodeHtml(value) {
@@ -147,7 +309,18 @@ function mergeSignals(data, counts, today) {
         summary: `自动更新在近30天公开源中发现 ${ACCOUNT} 提及 ${ticker}。该条目尚未人工归纳立场，先标记为观察项，等待后续确认。`,
         observations: count,
         sourceCount: count,
-        updatedAt: today
+        updatedAt: today,
+        performance: {
+          primaryTicker: ticker,
+          firstMentionDate: today,
+          firstMentionPrice: null,
+          currentPrice: null,
+          changePct: null,
+          currency: QUOTE_SYMBOLS[ticker]?.currency || "USD",
+          priceSource: null,
+          priceUpdatedAt: null,
+          note: "自动发现的新标的；首次提及价将在行情源可用时补齐。"
+        }
       });
       touchedTickers.push(ticker);
       changed = true;
@@ -237,6 +410,7 @@ async function main() {
   }
 
   const { changed, touchedTickers } = mergeSignals(data, counts, today);
+  await updatePerformance(data, today);
   updateSummary(data, today, touchedTickers, sourceResults);
 
   await writeFile(SIGNALS_PATH, `${JSON.stringify(data, null, 2)}\n`);
