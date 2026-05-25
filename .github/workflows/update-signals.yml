@@ -3,8 +3,9 @@ name: Update Serenity dashboard
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 1 * * *"
-    - cron: "30 21 * * 1-5"
+    # Hourly checks around the US market open window.
+    # The script guards by America/New_York time and only acts from 08:30 to 13:00.
+    - cron: "30 12-18 * * 1-5"
 
 permissions:
   contents: write
