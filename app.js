@@ -50,12 +50,17 @@ function renderPerformance(performance) {
   }
 
   const changeClass = Number(performance.changePct) >= 0 ? "positive" : "negative";
+  const hasFirstMention = performance.firstMentionDate || performance.firstMentionPrice;
+  const baseDate = performance.firstMentionDate || performance.firstTrackedDate;
+  const basePrice = performance.firstMentionPrice ?? performance.firstTrackedPrice;
+  const baseLabel = hasFirstMention ? "首次提及" : "首次追踪";
+
   return `
     <div class="performance">
       <div>
-        <span>首次提及</span>
-        <strong>${performance.firstMentionDate || "待回填"}</strong>
-        <small>${formatPrice(performance.firstMentionPrice, performance.currency)}</small>
+        <span>${baseLabel}</span>
+        <strong>${baseDate || "待回填"}</strong>
+        <small>${formatPrice(basePrice, performance.currency)}</small>
       </div>
       <div>
         <span>当前价</span>
