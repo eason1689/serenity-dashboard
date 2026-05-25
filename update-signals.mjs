@@ -96,6 +96,35 @@ function dateNDaysAgoShanghai(days) {
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
+function partsInTimeZone(timeZone) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).formatToParts(new Date());
+
+  const get = (type) => parts.find((part) => part.type === type)?.value;
+  return {
+    weekday: get("weekday"),
+    hour: Number(get("hour")),
+    minute: Number(get("minute"))
+  };
+}
+
+function isSerenityCheckWindow() {
+  if (process.env.GITHUB_EVENT_NAME !== "schedule") return true;
+
+  const now = partsInTimeZone("America/New_York");
+  if (["Sat", "Sun"].includes(now.weekday)) return false;
+
+  const minutes = now.hour * 60 + now.minute;
+  const start = 8 * 60 + 30;
+  const end = 13 * 60;
+  return minutes >= start && minutes <= end;
+}
+
 function parseCsvLine(line) {
   const values = [];
   let current = "";
@@ -290,16 +319,17 @@ function mergeSignals(data, counts, today) {
     if (signal) {
       const nextObservations = Math.max(signal.observations ?? 0, count);
       const nextSourceCount = Math.max(signal.sourceCount ?? 0, count);
-      if (nextObservations !== signal.observations || nextSourceCount !== signal.sourceCount) {
+      const hasTickerUpdate = nextObservations !== signal.observations || nextSourceCount !== signal.sourceCount;
+      if (hasTickerUpdate) {
         signal.observations = nextObservations;
         signal.sourceCount = nextSourceCount;
         changed = true;
+        touchedTickers.push(ticker);
       }
-      if (signal.updatedAt !== today) {
+      if (hasTickerUpdate && signal.updatedAt !== today) {
         signal.updatedAt = today;
         changed = true;
       }
-      touchedTickers.push(ticker);
     } else {
       data.signals.push({
         ticker,
@@ -376,7 +406,7 @@ function updateSummary(data, today, touchedTickers, sourceResults) {
 
 async function sendPushPlus(data, touchedTickers) {
   const token = process.env.PUSHPLUS_TOKEN;
-  if (!token) return;
+  if (!token || touchedTickers.length === 0) return;
 
   const title = `Serenity Dashboard 已更新｜${data.summary.date}`;
   const tickers = touchedTickers.length ? touchedTickers.slice(0, 12).join(", ") : "无新增高频标的";
@@ -398,6 +428,14 @@ async function sendPushPlus(data, touchedTickers) {
 }
 
 async function main() {
+  if (!isSerenityCheckWindow()) {
+    console.log(JSON.stringify({
+      skipped: true,
+      reason: "Outside Serenity US-market check window: 08:30-13:00 America/New_York."
+    }, null, 2));
+    return;
+  }
+
   const today = todayInShanghai();
   const data = JSON.parse(await readFile(SIGNALS_PATH, "utf8"));
   const sourceResults = await Promise.all(SOURCE_URLS.map(fetchSource));
