@@ -10,7 +10,7 @@
     "avatar": "avatar-serenity.png"
   },
   "summary": {
-    "date": "2026-04-24 至 2026-05-24",
+    "date": "2026-04-25 至 2026-05-25",
     "totalItems": 63,
     "filteredItems": 23,
     "published": 23,
@@ -105,7 +105,7 @@
       "summary": "她复盘 AXTI/InP 衬底瓶颈判断，并引用 IntelliEPI Q1 2026 财报中 InP 短缺成为 AI 基础设施瓶颈的说法；同时提到 IQE 过去数月涨幅明显，作为光子学上游验证案例。",
       "observations": 5,
       "sourceCount": 6,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-25"
     },
     {
       "ticker": "TSEM",
@@ -364,7 +364,7 @@
     }
   ],
   "automation": {
-    "lastRunAt": "2026-05-24T05:54:48.036Z",
+    "lastRunAt": "2026-05-25T12:53:59.079Z",
     "account": "@aleabitoreddit",
     "sourceStatus": [
       {
