@@ -75,7 +75,18 @@
       "summary": "近30天最核心标的。她反复强调 SIVE 是 CPO/1.6T 光学转型中的激光 chokepoint，类比下一代 LITE；催化包括董事会转向美国/全球光子学、MSCI/Nasdaq Stockholm 被动资金、AMZN-AlChip-Ayar 生态映射、NASDAQ 上市与潜在并购/IP 扩张。",
       "observations": 14,
       "sourceCount": 18,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "SIVE",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": null,
+        "changePct": null,
+        "currency": "USD",
+        "priceSource": null,
+        "priceUpdatedAt": null,
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+      }
     },
     {
       "ticker": "AAOI",
@@ -85,7 +96,20 @@
       "summary": "她把 AAOI 归为光学制造规模和收入 ramp 逻辑，称自己对 AAOI 极度看多；近期还用 AAOI 打爆空头叙事、财报后下跌被误读、2027 年高增长公司不应只看当期财务来表达正面观点。",
       "observations": 6,
       "sourceCount": 8,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "AAOI",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 181.49,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:19",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 181.49
+      }
     },
     {
       "ticker": "LITE",
@@ -95,7 +119,20 @@
       "summary": "LITE 被她当作 CPO/光子学重估的龙头锚点，反复用来类比 SIVE 的潜在路径；她提到 LITE 在 Google TPU/AI 光学 BOM 中位置重要，并认为相关小盘光学股会被算法/资金与 LITE 绑定交易。",
       "observations": 5,
       "sourceCount": 7,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "LITE",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 946.9,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 946.9
+      }
     },
     {
       "ticker": "AXTI / IQE",
@@ -105,7 +142,20 @@
       "summary": "她复盘 AXTI/InP 衬底瓶颈判断，并引用 IntelliEPI Q1 2026 财报中 InP 短缺成为 AI 基础设施瓶颈的说法；同时提到 IQE 过去数月涨幅明显，作为光子学上游验证案例。",
       "observations": 5,
       "sourceCount": 6,
-      "updatedAt": "2026-05-25"
+      "updatedAt": "2026-05-25",
+      "performance": {
+        "primaryTicker": "AXTI",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 140.83,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 140.83
+      }
     },
     {
       "ticker": "TSEM",
@@ -115,7 +165,20 @@
       "summary": "TSEM 被她归为 light-based stuff 需要的 foundry。她近期提到 TSEM 额外支付约 2.9 亿美元预付款以确保产能，并认为下游代工产能紧张会直接传导到上游基板/材料需求。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-13"
+      "updatedAt": "2026-05-13",
+      "performance": {
+        "primaryTicker": "TSEM",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 283.43,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 283.43
+      }
     },
     {
       "ticker": "NBIS",
@@ -125,7 +188,20 @@
       "summary": "她称 NBIS 财报强劲，重申 2026 年 70-90 亿美元 ARR、约 40% 调整后 EBITDA 利润率、4GW 签约容量和 NVDA 支持的融资结构；并把 NBIS 类比成下一代 AWS/平台型基础设施公司。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-13"
+      "updatedAt": "2026-05-13",
+      "performance": {
+        "primaryTicker": "NBIS",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 214.77,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 214.77
+      }
     },
     {
       "ticker": "LPK.DE / GLW / ASGLY / NIDGY",
@@ -135,7 +211,20 @@
       "summary": "她整理过玻璃基板关键玩家：LPK 代表 TGV 设备，GLW 代表玻璃材料，ASGLY/NIDGY 等为玻璃材料或制程链条；逻辑来自 AI 先进封装、玻璃基板量产节奏提前和 CoPoS/先进封装趋势。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-10"
+      "updatedAt": "2026-05-10",
+      "performance": {
+        "primaryTicker": "LPK.DE",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 24.8,
+        "changePct": 0,
+        "currency": "EUR",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 17:30:00",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 24.8
+      }
     },
     {
       "ticker": "RDDT",
@@ -145,7 +234,20 @@
       "summary": "她称 RDDT 是少数非 AI 名字中仍然非常有吸引力的公司，理由是增长速度快、财报后盈利质量改善，并对其跑输市场表示不理解。",
       "observations": 2,
       "sourceCount": 2,
-      "updatedAt": "2026-05-08"
+      "updatedAt": "2026-05-08",
+      "performance": {
+        "primaryTicker": "RDDT",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 141.67,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:24",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 141.67
+      }
     },
     {
       "ticker": "FLNC",
@@ -155,7 +257,20 @@
       "summary": "她提到 FLNC 盘前因两个直接 hyperscaler 合同预期上涨约 18.66%，认为小市值公司拿到这类合同通常可能带来估值重估。",
       "observations": 2,
       "sourceCount": 2,
-      "updatedAt": "2026-05-08"
+      "updatedAt": "2026-05-08",
+      "performance": {
+        "primaryTicker": "FLNC",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 21.49,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 21.49
+      }
     },
     {
       "ticker": "INTC",
@@ -165,7 +280,20 @@
       "summary": "在近30天 US-available watchlist 中，她把 INTC 定位为美国 foundry 与国家安全希望；近期半导体动态里也提到 AAPL 转向 INTC 代工是重大变化。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "INTC",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 119.84,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:19",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 119.84
+      }
     },
     {
       "ticker": "MRVL",
@@ -175,7 +303,20 @@
       "summary": "MRVL 被她放在 AI ASIC、Maia 相关增量和 CPO 附加价值链中；在 SIVE 叙事里也多次作为潜在 CPO 生态客户或链条节点出现。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "MRVL",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 196.33,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 196.33
+      }
     },
     {
       "ticker": "TSM",
@@ -185,7 +326,20 @@
       "summary": "她把 TSM 称为 semis/AI 的 backbone，并在近期半导体 TLDR 中提到 TSM 推动 CoPoS、2026 年 4 月营收同比增长约 30%。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-09"
+      "updatedAt": "2026-05-09",
+      "performance": {
+        "primaryTicker": "TSM",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 404.52,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:24",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 404.52
+      }
     },
     {
       "ticker": "COHR",
@@ -195,7 +349,20 @@
       "summary": "COHR 被她列入光学周期受益股，理由是垂直整合能力和捕捉光学上行周期；她也用 COHR/LITE 的路径类比 SIVE 未来可能的下游 IP 或垂直整合。",
       "observations": 2,
       "sourceCount": 3,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "COHR",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 377.57,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:20",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 377.57
+      }
     },
     {
       "ticker": "RKLB",
@@ -205,7 +372,20 @@
       "summary": "她在近30天 watchlist 和周五推文中多次提到 RKLB，长期逻辑是太空经济/最终 frontier；短期提到 US Space Force 合同增强国防太空叙事。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-22"
+      "updatedAt": "2026-05-22",
+      "performance": {
+        "primaryTicker": "RKLB",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 135.76,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 135.76
+      }
     },
     {
       "ticker": "AVGO / AMZN / GOOGL / META",
@@ -215,7 +395,20 @@
       "summary": "她把 AVGO 归入 hyperscaler 不想长期缴纳 GPU tax 的 ASIC 受益链；AMZN 受益电商和机器人降本，同时与 AlChip/Trainium 生态关联；GOOGL 有 YouTube、Gemini、TPU 垂直整合；META 则是 Instagram/WhatsApp 等消费互联网现金流平台。",
       "observations": 4,
       "sourceCount": 5,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "AVGO",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 414.14,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 414.14
+      }
     },
     {
       "ticker": "AMKR / JBL / FN / SMTC",
@@ -225,7 +418,20 @@
       "summary": "这些标的被她放在 AI 光学和先进封装的制造/组装环节：AMKR 受益美国先进封装设施，FN/JBL 负责光学装配，SMTC 关联 LRO/LPO 转换。",
       "observations": 4,
       "sourceCount": 5,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "AMKR",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 65.75,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 65.75
+      }
     },
     {
       "ticker": "MU / SNDK / Samsung / SK Hynix",
@@ -235,7 +441,20 @@
       "summary": "她在近期半导体 TLDR 中提到 2D NAND 短缺、DRAM/NAND 合约价格大幅上涨，以及大型科技公司愿意资助 SK Hynix 扩产，认为对 MU、SNDK、Samsung、SK Hynix 等存储链正面。",
       "observations": 3,
       "sourceCount": 4,
-      "updatedAt": "2026-05-09"
+      "updatedAt": "2026-05-09",
+      "performance": {
+        "primaryTicker": "MU",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 751,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 751
+      }
     },
     {
       "ticker": "ARM",
@@ -245,7 +464,20 @@
       "summary": "她在 watchlist 中把 ARM 归为未来十年 AGI CPU 规模化收入受益者，并把 ARM 列入自己已验证的高回报 thesis 名单。",
       "observations": 2,
       "sourceCount": 3,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "ARM",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 306.51,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:18",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 306.51
+      }
     },
     {
       "ticker": "MP / LPTH",
@@ -255,7 +487,20 @@
       "summary": "MP 被她归入美国稀土计划和国家安全；LPTH 则与锗材料、中国出口控制和美国工程替代方案相关，是供应链安全主题的一部分。",
       "observations": 2,
       "sourceCount": 3,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "MP",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 64.46,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:24",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 64.46
+      }
     },
     {
       "ticker": "HIMS / HOOD / CRCL",
@@ -265,7 +510,20 @@
       "summary": "她对 HOOD 短期不一定喜欢但长期看好其零售金融产品扩张；CRCL 被放在稳定币/支付未来主题；HIMS 作为全球 DTC 渠道和并购扩张后的反向多头候选。",
       "observations": 3,
       "sourceCount": 3,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "HIMS",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": 23.75,
+        "changePct": 0,
+        "currency": "USD",
+        "priceSource": "Stooq",
+        "priceUpdatedAt": "2026-05-22 22:00:21",
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
+        "firstTrackedDate": "2026-05-25",
+        "firstTrackedPrice": 23.75
+      }
     },
     {
       "ticker": "FUTU / TIGR",
@@ -275,7 +533,18 @@
       "summary": "她在周五推文中对 FUTU/TIGR 语气偏谨慎，主要围绕中国监管与历史收入相关风险；这类内容更像风险提示，不是做多信号。",
       "observations": 1,
       "sourceCount": 2,
-      "updatedAt": "2026-05-22"
+      "updatedAt": "2026-05-22",
+      "performance": {
+        "primaryTicker": "FUTU",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": null,
+        "changePct": null,
+        "currency": "USD",
+        "priceSource": null,
+        "priceUpdatedAt": null,
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+      }
     },
     {
       "ticker": "IREN",
@@ -285,7 +554,18 @@
       "summary": "她近期提到自己曾在 IREN 较高位置看空，并指出 NVDA 不会给其提供资金，若要为 5GW 容量购买 GPU 需要其他融资；可转债相较 ATM 更好，但仍属于资金结构风险观察。",
       "observations": 1,
       "sourceCount": 2,
-      "updatedAt": "2026-05-24"
+      "updatedAt": "2026-05-24",
+      "performance": {
+        "primaryTicker": "IREN",
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": null,
+        "changePct": null,
+        "currency": "USD",
+        "priceSource": null,
+        "priceUpdatedAt": null,
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+      }
     },
     {
       "ticker": "30-stock watchlist",
@@ -295,7 +575,18 @@
       "summary": "她近30天发过一条 US-available 30 股票清单，包含 INTC、MRVL、TSM、COHR、RKLB、DRAM、AVGO、AMZN、ARM、TSEM、IBIT、NBIS、GOOGL、AMKR、HOOD、CRCL、META、LITE、LPTH、FN、JBL、MP、HIMS、SMTC、POWL、VPG、MOG.A、MSFT、CVX、XLU。该清单是偏长期观察，不是完整交易计划。",
       "observations": 1,
       "sourceCount": 1,
-      "updatedAt": "2026-04-24"
+      "updatedAt": "2026-04-24",
+      "performance": {
+        "primaryTicker": null,
+        "firstMentionDate": null,
+        "firstMentionPrice": null,
+        "currentPrice": null,
+        "changePct": null,
+        "currency": "USD",
+        "priceSource": null,
+        "priceUpdatedAt": null,
+        "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。"
+      }
     }
   ],
   "topics": [
@@ -364,7 +655,7 @@
     }
   ],
   "automation": {
-    "lastRunAt": "2026-05-25T12:53:59.079Z",
+    "lastRunAt": "2026-05-25T15:48:26.058Z",
     "account": "@aleabitoreddit",
     "sourceStatus": [
       {
