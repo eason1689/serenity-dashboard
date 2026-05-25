@@ -184,10 +184,10 @@
       "updatedAt": "2026-05-13",
       "performance": {
         "primaryTicker": "TSEM",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-13",
+        "firstMentionPrice": 270.7699890136719,
         "currentPrice": 283.43,
-        "changePct": 0,
+        "changePct": 4.675559146138938,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:18",
@@ -195,9 +195,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 283.43,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-13",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -211,10 +212,10 @@
       "updatedAt": "2026-05-13",
       "performance": {
         "primaryTicker": "NBIS",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-13",
+        "firstMentionPrice": 207.27000427246094,
         "currentPrice": 214.77,
-        "changePct": 0,
+        "changePct": 3.6184665281717097,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:18",
@@ -222,9 +223,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 214.77,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-13",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -238,10 +240,10 @@
       "updatedAt": "2026-05-10",
       "performance": {
         "primaryTicker": "LPK.DE",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-11",
+        "firstMentionPrice": 27.899999618530273,
         "currentPrice": 24.8,
-        "changePct": 0,
+        "changePct": -11.111109895755531,
         "currency": "EUR",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 17:30:00",
@@ -249,9 +251,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 24.8,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-10",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -265,10 +268,10 @@
       "updatedAt": "2026-05-08",
       "performance": {
         "primaryTicker": "RDDT",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-08",
+        "firstMentionPrice": 155.8000030517578,
         "currentPrice": 141.67,
-        "changePct": 0,
+        "changePct": -9.069321421684275,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:24",
@@ -276,9 +279,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 141.67,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-08",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -292,10 +296,10 @@
       "updatedAt": "2026-05-08",
       "performance": {
         "primaryTicker": "FLNC",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-08",
+        "firstMentionPrice": 24.15999984741211,
         "currentPrice": 21.49,
-        "changePct": 0,
+        "changePct": -11.051323941535982,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:18",
@@ -303,9 +307,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 21.49,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-08",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -373,10 +378,10 @@
       "updatedAt": "2026-05-09",
       "performance": {
         "primaryTicker": "TSM",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-11",
+        "firstMentionPrice": 404.5400085449219,
         "currentPrice": 404.52,
-        "changePct": 0,
+        "changePct": -0.0049459990357594895,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:24",
@@ -384,9 +389,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 404.52,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-09",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -427,10 +433,10 @@
       "updatedAt": "2026-05-22",
       "performance": {
         "primaryTicker": "RKLB",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-22",
+        "firstMentionPrice": 135.75999450683594,
         "currentPrice": 135.76,
-        "changePct": 0,
+        "changePct": 0.000004046231788208017,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:18",
@@ -438,9 +444,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 135.76,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-22",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -508,10 +515,10 @@
       "updatedAt": "2026-05-09",
       "performance": {
         "primaryTicker": "MU",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-11",
+        "firstMentionPrice": 795.3300170898438,
         "currentPrice": 751,
-        "changePct": 0,
+        "changePct": -5.573789010510344,
         "currency": "USD",
         "priceSource": "Stooq",
         "priceUpdatedAt": "2026-05-22 22:00:18",
@@ -519,9 +526,10 @@
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 751,
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-09",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -616,8 +624,8 @@
       "updatedAt": "2026-05-22",
       "performance": {
         "primaryTicker": "FUTU",
-        "firstMentionDate": null,
-        "firstMentionPrice": null,
+        "firstMentionDate": "2026-05-22",
+        "firstMentionPrice": 89.76000213623047,
         "currentPrice": null,
         "changePct": null,
         "currency": "USD",
@@ -625,9 +633,10 @@
         "priceUpdatedAt": null,
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "backfillStartDate": "2026-03-01",
-        "backfillStatus": "price-unavailable",
+        "backfillStatus": "fallback-updatedAt",
         "backfillCandidateDate": "2026-05-22",
-        "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。"
+        "backfillNote": "未能在公开源中定位 2026-03-01 以来的明确首次提及日期，暂用现有 updatedAt 或起始日回填。",
+        "firstMentionPriceSource": "Yahoo Finance chart daily close"
       }
     },
     {
@@ -765,7 +774,7 @@
   },
   "backfill": {
     "startDate": "2026-03-01",
-    "lastRunAt": "2026-05-25T17:33:46.998Z",
+    "lastRunAt": "2026-05-25T18:01:02.873Z",
     "sourceStatus": [
       {
         "url": "https://investcopilot.cloud/?days=120&twitter_author=aleabitoreddit",
