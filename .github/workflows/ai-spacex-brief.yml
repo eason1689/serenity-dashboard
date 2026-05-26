@@ -3,7 +3,15 @@ name: AI stocks and SpaceX daily brief
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 0 * * *"
+    # Beijing 08:17 every day. Off-peak minute reduces missed scheduled runs.
+    - cron: "17 0 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-spacex-daily-brief
+  cancel-in-progress: false
 
 jobs:
   brief:
@@ -11,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
