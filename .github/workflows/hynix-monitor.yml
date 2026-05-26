@@ -3,10 +3,17 @@ name: Hynix 07709 deviation monitor
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 1-8 * * 1-5"
+    # Every 15 minutes during the broad Hong Kong trading-day window.
+    # The script itself skips holidays, lunch break, half-day/halts, and non-trading time.
+    # Use off-peak minutes so GitHub's scheduled runner queue is less likely to drop checks.
+    - cron: "2,17,32,47 1-8 * * 1-5"
 
 permissions:
   contents: write
+
+concurrency:
+  group: hynix-07709-monitor
+  cancel-in-progress: false
 
 jobs:
   monitor:
@@ -14,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
