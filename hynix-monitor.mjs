@@ -5,11 +5,11 @@ const STATE_PATH = new URL("./hynix-monitor-state.json", import.meta.url);
 const THRESHOLD = 1.0;
 const REARM_ABS = 0.5;
 const EXPAND_STEP = 0.5;
-const HK_SYMBOL = "07709.HK";
+const HK_SYMBOL = "7709.HK";
 const KR_SYMBOL = "000660.KS";
 const SOURCE_NAME = "Yahoo Finance chart API";
 const SOURCE_LINKS = [
-  "https://finance.yahoo.com/quote/07709.HK",
+  "https://finance.yahoo.com/quote/7709.HK",
   "https://finance.yahoo.com/quote/000660.KS"
 ];
 
