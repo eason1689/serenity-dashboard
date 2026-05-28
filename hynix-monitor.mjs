@@ -5,6 +5,7 @@ const STATE_PATH = new URL("./hynix-monitor-state.json", import.meta.url);
 const THRESHOLD = 1.0;
 const REARM_ABS = 0.5;
 const EXPAND_STEP = 0.5;
+const HK_MAX_QUOTE_AGE_MINUTES = 20;
 const HK_SYMBOL = "7709.HK";
 const KR_SYMBOL = "000660.KS";
 const SOURCE_NAME = "Yahoo Finance chart API";
@@ -231,6 +232,8 @@ function markdownBody({ signal, kr, hk, theoreticalPct, deviationPct, krClosedNo
     ``,
     `**07709.HK 数据时间：** ${formatTime(hk.time, "Asia/Hong_Kong")}（香港时间）`,
     ``,
+    `**行情延迟提示：** 港股免费行情通常约延迟 15 分钟，本提醒不是实时成交价。`,
+    ``,
     krClosedNote ? `**状态标注：** ${krClosedNote}` : "",
     ``,
     `**行情源：** ${SOURCE_NAME}`,
@@ -299,8 +302,8 @@ async function main() {
   const hkAge = minutesAgo(hk.time);
   const hkQuoteDate = hkDateString(new Date(hk.time * 1000));
 
-  if (hkQuoteDate !== hkToday || hkAge > 35) {
-    console.log(`跳过：07709.HK 行情非当前港股交易时段实时数据，可能休市、半日市、暂停交易或行情延迟。07709 时间 ${formatTime(hk.time)}，距今 ${hkAge.toFixed(1)} 分钟。`);
+  if (hkQuoteDate !== hkToday || hkAge > HK_MAX_QUOTE_AGE_MINUTES) {
+    console.log(`跳过：07709.HK 行情超过 ${HK_MAX_QUOTE_AGE_MINUTES} 分钟有效窗口，可能休市、半日市、暂停交易或行情延迟。07709 时间 ${formatTime(hk.time)}，距今 ${hkAge.toFixed(1)} 分钟。`);
     await writeState(state);
     return;
   }
