@@ -3,104 +3,147 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Serenity 股票情报看板</title>
+    <title>Serenity KOL 追踪</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <main class="app-shell">
-      <section class="profile-panel" aria-label="账号概览">
-        <div class="profile-main">
-          <div class="avatar" aria-hidden="true"></div>
-          <div>
-            <h1 id="profileName">Serenity</h1>
-            <div class="pill quiet" id="profileLabel">KOL</div>
+    <div class="app-frame">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="./">KOL追踪</a>
+        <nav class="nav-list">
+          <a class="nav-item active" href="./">资讯库</a>
+          <a class="nav-item" href="#dailyFeed">日报</a>
+          <a class="nav-item" href="#stockDigest">发现KOL</a>
+          <a class="nav-item" href="#watchlist">关注管理</a>
+          <a class="nav-item" href="#riskText">推送渠道</a>
+          <span class="nav-item muted">话题追踪</span>
+        </nav>
+        <a class="community-card" href="https://discord.gg/PrpCYD9UH" target="_blank" rel="noreferrer">
+          <strong>加入社群交流</strong>
+          <span>如果有建议或者新增KOL订阅随时反馈</span>
+        </a>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" placeholder="搜索作者、关键词或话题..." aria-label="搜索作者、关键词或话题">
+            <kbd>/</kbd>
+          </label>
+          <div class="top-actions">
+            <button class="ghost-button" type="button" aria-label="切换主题">◐</button>
+            <button class="login-button" type="button">登录</button>
           </div>
-        </div>
-        <div class="profile-actions">
-          <button class="icon-button" type="button" aria-label="关注提醒">Bell</button>
-          <button class="more-button" type="button" aria-label="更多">...</button>
-        </div>
-        <div class="profile-stats" id="profileStats"></div>
-        <div class="channels">
-          <article class="channel-card">
-            <div class="channel-icon twitter-dot"></div>
-            <div>
-              <h2>Twitter</h2>
-              <p><strong id="contentCount">863</strong> 内容</p>
-            </div>
-            <span id="followers">27.10万</span>
-          </article>
-          <article class="channel-card dashed">
-            <div class="channel-icon plus-dot">+</div>
-            <div>
-              <h2>新增频道</h2>
-              <p>支持更多平台接入</p>
-            </div>
-          </article>
-        </div>
-      </section>
+        </header>
 
-      <nav class="tabs" aria-label="内容导航">
-        <button class="tab" type="button">内容流</button>
-        <button class="tab active" type="button">Wiki</button>
-        <button class="tab" type="button">交易信号</button>
-      </nav>
-
-      <div class="dashboard-grid">
-        <section class="content-column">
-          <section class="filter-panel" aria-label="筛选条件">
-            <div class="filter-row">
-              <strong>立场</strong>
-              <div class="chips" id="stanceChips"></div>
+        <main class="main-content">
+          <section class="profile-card" aria-label="KOL 概览">
+            <div class="profile-head">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="profile-name-row">
+                  <h1 id="profileName">Serenity</h1>
+                  <span class="kol-badge" id="profileLabel">KOL</span>
+                </div>
+                <div class="profile-stats" id="profileStats"></div>
+              </div>
             </div>
-            <div class="filter-row">
-              <strong>维度</strong>
-              <div class="chips" id="dimensionChips"></div>
+            <div class="profile-actions">
+              <button class="follow-button" type="button">关注</button>
+              <button class="more-button" type="button" aria-label="更多">...</button>
             </div>
-            <div class="filter-footer">
-              <span id="filterCount">筛选后：8 / 44</span>
-              <button type="button">清除筛选</button>
+            <div class="channel-row">
+              <article class="channel-card">
+                <span class="channel-dot twitter-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Twitter</strong>
+                  <span><b id="contentCount">0</b> 内容</span>
+                </div>
+                <em id="followers">--</em>
+              </article>
+              <article class="channel-card dashed">
+                <span class="channel-dot plus-dot" aria-hidden="true">+</span>
+                <div>
+                  <strong>新增频道</strong>
+                  <span>支持更多平台接入</span>
+                </div>
+              </article>
             </div>
           </section>
 
-          <div class="section-title">
-            <span class="chart-mark" aria-hidden="true"></span>
-            <h2>个股 · <span id="signalCount">8</span> 条</h2>
+          <nav class="tabs" aria-label="内容导航">
+            <a class="tab active" href="#dailyFeed">每日总结</a>
+            <a class="tab" href="#stockDigest">提及股票</a>
+            <a class="tab" href="#riskText">Wiki</a>
+          </nav>
+
+          <div class="dashboard-grid">
+            <section class="feed-column">
+              <section class="filter-strip" aria-label="筛选条件">
+                <div>
+                  <strong>立场</strong>
+                  <div class="chips" id="stanceChips"></div>
+                </div>
+                <div>
+                  <strong>维度</strong>
+                  <div class="chips" id="dimensionChips"></div>
+                </div>
+                <p id="filterCount">加载中...</p>
+              </section>
+
+              <section class="section-heading" id="dailyFeed">
+                <span>每日总结</span>
+                <h2>Serenity 观点流</h2>
+              </section>
+              <div class="daily-feed" id="dailyCards"></div>
+            </section>
+
+            <aside class="insight-column">
+              <section class="side-card">
+                <div class="side-heading">
+                  <h2>数据概览</h2>
+                  <div class="range-tabs" aria-label="时间范围">
+                    <span class="selected">7天</span>
+                    <span>30天</span>
+                    <span>90天</span>
+                  </div>
+                </div>
+                <div class="sparkline" aria-hidden="true">
+                  <svg viewBox="0 0 260 112" role="img">
+                    <polyline points="6,64 24,72 38,49 54,78 70,40 88,54 104,34 124,80 142,58 160,48 178,68 196,30 214,72 232,36 254,58"></polyline>
+                  </svg>
+                </div>
+                <div class="metric-list" id="metrics"></div>
+              </section>
+
+              <section class="side-card">
+                <h2>内容类型分布</h2>
+                <div class="donut-wrap">
+                  <div class="donut"><span id="donutTotal">0<small>全部内容</small></span></div>
+                </div>
+                <div class="legend" id="contentTypes"></div>
+              </section>
+
+              <section class="side-card" id="stockDigest">
+                <h2>股票表现</h2>
+                <div class="stock-leaders" id="stockLeaders"></div>
+              </section>
+
+              <section class="side-card" id="watchlist">
+                <h2>热门话题</h2>
+                <div class="topic-cloud" id="topics"></div>
+              </section>
+
+              <section class="risk-card">
+                <h2>风险标记</h2>
+                <p id="riskText"></p>
+              </section>
+            </aside>
           </div>
-          <section class="signal-grid" id="signalGrid" aria-label="股票信息卡"></section>
-        </section>
-
-        <aside class="side-column">
-          <section class="side-card">
-            <h2>数据概览</h2>
-            <div class="sparkline" aria-hidden="true">
-              <svg viewBox="0 0 260 120" role="img">
-                <polyline points="5,70 28,84 44,90 58,66 78,76 92,58 116,61 132,86 154,70 174,66 198,74 214,30 228,82 244,24 255,66"></polyline>
-              </svg>
-            </div>
-            <div class="metric-list" id="metrics"></div>
-          </section>
-
-          <section class="side-card">
-            <h2>内容类型分布</h2>
-            <div class="donut-wrap">
-              <div class="donut"><span>863<small>全部内容</small></span></div>
-            </div>
-            <div class="legend" id="contentTypes"></div>
-          </section>
-
-          <section class="side-card">
-            <h2>热门话题</h2>
-            <div class="topic-cloud" id="topics"></div>
-          </section>
-
-          <section class="risk-card">
-            <h2>风险标记</h2>
-            <p id="riskText"></p>
-          </section>
-        </aside>
+        </main>
       </div>
-    </main>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>

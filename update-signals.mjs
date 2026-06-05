@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 const SIGNALS_PATH = new URL("./signals.json", import.meta.url);
 const DASHBOARD_URL = "https://eason1689.github.io/serenity-dashboard/";
 const ACCOUNT = "@aleabitoreddit";
+const HISTORICAL_BASELINE_DATE = "2026-03-01";
 
 const SOURCE_URLS = [
   "https://mobile.twstalker.com/aleabitoreddit",
@@ -12,7 +13,7 @@ const SOURCE_URLS = [
 const WATCHLIST = [
   "SIVE", "AAOI", "LITE", "AXTI", "IQE", "TSEM", "NBIS", "LPK", "GLW",
   "ASGLY", "NIDGY", "RDDT", "FLNC", "INTC", "MRVL", "TSM", "COHR",
-  "RKLB", "AVGO", "AMZN", "GOOGL", "META", "AMKR", "JBL", "FN", "SMTC",
+  "RKLB", "AVGO", "QCOM", "NVDA", "COIN", "2454.TW", "SOI", "AMZN", "GOOGL", "META", "AMKR", "JBL", "FN", "SMTC",
   "MU", "SNDK", "ARM", "MP", "LPTH", "HIMS", "HOOD", "CRCL", "FUTU",
   "TIGR", "IREN", "MSFT", "CVX", "XLU", "POWL", "VPG"
 ];
@@ -26,7 +27,7 @@ const TOPIC_HINTS = [
 ];
 
 const QUOTE_SYMBOLS = {
-  SIVE: { sourceSymbol: "sive.us", displaySymbol: "SIVE", currency: "USD" },
+  SIVE: { sourceSymbol: "sive.se", displaySymbol: "SIVE.ST", currency: "SEK" },
   AAOI: { sourceSymbol: "aaoi.us", displaySymbol: "AAOI", currency: "USD" },
   LITE: { sourceSymbol: "lite.us", displaySymbol: "LITE", currency: "USD" },
   AXTI: { sourceSymbol: "axti.us", displaySymbol: "AXTI", currency: "USD" },
@@ -45,6 +46,11 @@ const QUOTE_SYMBOLS = {
   COHR: { sourceSymbol: "cohr.us", displaySymbol: "COHR", currency: "USD" },
   RKLB: { sourceSymbol: "rklb.us", displaySymbol: "RKLB", currency: "USD" },
   AVGO: { sourceSymbol: "avgo.us", displaySymbol: "AVGO", currency: "USD" },
+  QCOM: { sourceSymbol: "qcom.us", displaySymbol: "QCOM", currency: "USD" },
+  NVDA: { sourceSymbol: "nvda.us", displaySymbol: "NVDA", currency: "USD" },
+  COIN: { sourceSymbol: "coin.us", displaySymbol: "COIN", currency: "USD" },
+  "2454.TW": { sourceSymbol: "2454.tw", displaySymbol: "2454.TW", currency: "TWD" },
+  SOI: { sourceSymbol: "soi.fr", displaySymbol: "SOI.PA", currency: "EUR" },
   AMZN: { sourceSymbol: "amzn.us", displaySymbol: "AMZN", currency: "USD" },
   GOOGL: { sourceSymbol: "googl.us", displaySymbol: "GOOGL", currency: "USD" },
   META: { sourceSymbol: "meta.us", displaySymbol: "META", currency: "USD" },
@@ -145,6 +151,24 @@ function parseCsvLine(line) {
   return values;
 }
 
+function toCompactDate(date) {
+  return date.replaceAll("-", "");
+}
+
+function addDays(dateString, days) {
+  const date = new Date(`${dateString}T00:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function toUnixSeconds(dateString) {
+  return Math.floor(new Date(`${dateString}T00:00:00Z`).getTime() / 1000);
+}
+
+function fromUnixSeconds(seconds) {
+  return new Date(seconds * 1000).toISOString().slice(0, 10);
+}
+
 function primaryTicker(signal) {
   const candidates = signal.ticker
     .split("/")
@@ -159,6 +183,9 @@ function primaryTicker(signal) {
 async function fetchQuote(ticker) {
   const config = QUOTE_SYMBOLS[ticker];
   if (!config) return null;
+
+  const yahooQuote = await fetchYahooQuote(ticker);
+  if (yahooQuote) return yahooQuote;
 
   const url = `https://stooq.com/q/l/?s=${encodeURIComponent(config.sourceSymbol)}&f=sd2t2ohlcv&h&e=csv`;
   const controller = new AbortController();
@@ -195,14 +222,230 @@ async function fetchQuote(ticker) {
   }
 }
 
-async function updatePerformance(data, today) {
-  const tickers = [...new Set(data.signals.map(primaryTicker).filter(Boolean))];
-  const quotes = new Map();
+async function fetchYahooQuote(ticker) {
+  const config = QUOTE_SYMBOLS[ticker];
+  if (!config) return null;
 
-  await Promise.all(tickers.map(async (ticker) => {
-    const quote = await fetchQuote(ticker);
+  const url = `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(config.displaySymbol)}?range=5d&interval=1d&includePrePost=false`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "user-agent": "Mozilla/5.0 serenity-dashboard-updater/1.0",
+        "accept": "application/json,text/plain,*/*"
+      }
+    });
+
+    if (!response.ok) return null;
+    const data = await response.json();
+    const result = data?.chart?.result?.[0];
+    const meta = result?.meta || {};
+    const timestamps = result?.timestamp || [];
+    const closes = result?.indicators?.quote?.[0]?.close || [];
+    const validCloses = closes
+      .map((close, index) => ({ price: Number(close), timestamp: timestamps[index] }))
+      .filter((item) => Number.isFinite(item.price) && item.price > 0);
+
+    const price = Number(meta.regularMarketPrice ?? validCloses.at(-1)?.price);
+    if (!Number.isFinite(price) || price <= 0) return null;
+
+    const previousClose = Number(meta.chartPreviousClose ?? validCloses.at(-2)?.price);
+    const dailyChange = Number.isFinite(previousClose) && previousClose > 0
+      ? price - previousClose
+      : null;
+    const dailyChangePct = dailyChange === null ? null : (dailyChange / previousClose) * 100;
+    const updatedAt = Number(meta.regularMarketTime)
+      ? new Date(meta.regularMarketTime * 1000).toISOString()
+      : (validCloses.at(-1)?.timestamp ? new Date(validCloses.at(-1).timestamp * 1000).toISOString() : null);
+
+    return {
+      ticker,
+      displaySymbol: config.displaySymbol,
+      currency: meta.currency || config.currency,
+      price,
+      previousClose: Number.isFinite(previousClose) && previousClose > 0 ? previousClose : null,
+      dailyChange,
+      dailyChangePct,
+      priceSource: "Yahoo Finance",
+      priceUpdatedAt: updatedAt,
+      sourceSymbol: meta.symbol || config.displaySymbol,
+      volume: meta.regularMarketVolume ?? null
+    };
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function fetchYahooHistoricalBaseline(ticker) {
+  const config = QUOTE_SYMBOLS[ticker];
+  if (!config) return null;
+
+  const period1 = toUnixSeconds(HISTORICAL_BASELINE_DATE);
+  const period2 = toUnixSeconds(addDays(HISTORICAL_BASELINE_DATE, 14));
+  const url = `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(config.displaySymbol)}?period1=${period1}&period2=${period2}&interval=1d&events=history&includeAdjustedClose=true`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "user-agent": "Mozilla/5.0 serenity-dashboard-updater/1.0",
+        "accept": "application/json,text/plain,*/*"
+      }
+    });
+
+    if (!response.ok) return null;
+    const data = await response.json();
+    const result = data?.chart?.result?.[0];
+    const timestamps = result?.timestamp || [];
+    const closes = result?.indicators?.quote?.[0]?.close || [];
+
+    for (let index = 0; index < timestamps.length; index += 1) {
+      const date = fromUnixSeconds(timestamps[index]);
+      const price = Number(closes[index]);
+      if (date >= HISTORICAL_BASELINE_DATE && Number.isFinite(price) && price > 0) {
+        return {
+          date,
+          price,
+          currency: config.currency,
+          source: "Yahoo Finance chart daily close"
+        };
+      }
+    }
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+
+  return null;
+}
+
+async function fetchStooqHistoricalBaseline(ticker) {
+  const config = QUOTE_SYMBOLS[ticker];
+  if (!config) return null;
+
+  const d1 = toCompactDate(HISTORICAL_BASELINE_DATE);
+  const d2 = toCompactDate(addDays(HISTORICAL_BASELINE_DATE, 14));
+  const url = `https://stooq.com/q/d/l/?s=${encodeURIComponent(config.sourceSymbol)}&d1=${d1}&d2=${d2}&i=d`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: { "user-agent": "Mozilla/5.0 serenity-dashboard-updater/1.0" }
+    });
+
+    if (!response.ok) return null;
+    const lines = (await response.text()).trim().split(/\r?\n/).slice(1);
+    for (const line of lines) {
+      const [date, open, high, low, close, volume] = parseCsvLine(line);
+      const price = Number(close);
+      if (date >= HISTORICAL_BASELINE_DATE && Number.isFinite(price) && price > 0) {
+        return {
+          date,
+          price,
+          currency: config.currency,
+          source: "Stooq historical daily close"
+        };
+      }
+    }
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+
+  return null;
+}
+
+async function fetchHistoricalBaseline(ticker) {
+  return (await fetchYahooHistoricalBaseline(ticker)) || (await fetchStooqHistoricalBaseline(ticker));
+}
+
+function updateHistoricalChange(performance, currentPrice, baseline) {
+  if (baseline) {
+    performance.baselineRequestedDate = HISTORICAL_BASELINE_DATE;
+    performance.baselineStartDate = baseline.date;
+    performance.baselineStartPrice = baseline.price;
+    performance.baselinePriceSource = baseline.source;
+  }
+
+  const basePrice = Number(performance.baselineStartPrice);
+  if (Number.isFinite(currentPrice) && currentPrice > 0 && Number.isFinite(basePrice) && basePrice > 0) {
+    performance.changePct = ((currentPrice - basePrice) / basePrice) * 100;
+  }
+}
+
+async function mapLimit(items, limit, mapper) {
+  const results = [];
+  const executing = new Set();
+
+  for (const item of items) {
+    const promise = Promise.resolve().then(() => mapper(item));
+    results.push(promise);
+    executing.add(promise);
+    promise.finally(() => executing.delete(promise));
+
+    if (executing.size >= limit) {
+      await Promise.race(executing);
+    }
+  }
+
+  return Promise.all(results);
+}
+
+async function updatePerformance(data, today) {
+  const tickers = [...new Set([...WATCHLIST, ...data.signals.map(primaryTicker).filter(Boolean)])];
+  const quotes = new Map();
+  const baselines = new Map();
+
+  await mapLimit(tickers, 6, async (ticker) => {
+    const [quote, baseline] = await Promise.all([
+      fetchQuote(ticker),
+      fetchHistoricalBaseline(ticker)
+    ]);
     if (quote) quotes.set(ticker, quote);
-  }));
+    if (baseline) baselines.set(ticker, baseline);
+  });
+
+  data.marketQuotes ||= {};
+  for (const ticker of tickers) {
+    const quote = quotes.get(ticker);
+    const baseline = baselines.get(ticker);
+    const previous = data.marketQuotes[ticker] || {};
+    const currentPrice = Number(quote?.price ?? previous.currentPrice);
+    const marketQuote = {
+      ...previous,
+      primaryTicker: quote?.displaySymbol || previous.primaryTicker || QUOTE_SYMBOLS[ticker]?.displaySymbol || ticker,
+      currency: quote?.currency || previous.currency || QUOTE_SYMBOLS[ticker]?.currency || "USD",
+      currentPrice: Number.isFinite(currentPrice) && currentPrice > 0 ? currentPrice : null,
+      previousClose: quote?.previousClose ?? previous.previousClose ?? null,
+      dailyChange: quote?.dailyChange ?? previous.dailyChange ?? null,
+      dailyChangePct: quote?.dailyChangePct ?? previous.dailyChangePct ?? null,
+      priceSource: quote?.priceSource || previous.priceSource || null,
+      priceUpdatedAt: quote?.priceUpdatedAt || previous.priceUpdatedAt || null
+    };
+
+    updateHistoricalChange(marketQuote, marketQuote.currentPrice, baseline);
+    if (marketQuote.currentPrice) {
+      marketQuote.cumulativeStartDate ||= today;
+      marketQuote.cumulativeStartPrice ??= marketQuote.currentPrice;
+      const cumulativeBasePrice = Number(marketQuote.cumulativeStartPrice);
+      if (Number.isFinite(cumulativeBasePrice) && cumulativeBasePrice > 0) {
+        marketQuote.cumulativeChangePct = ((marketQuote.currentPrice - cumulativeBasePrice) / cumulativeBasePrice) * 100;
+      }
+    }
+
+    data.marketQuotes[ticker] = marketQuote;
+  }
 
   for (const signal of data.signals) {
     const ticker = primaryTicker(signal);
@@ -222,22 +465,41 @@ async function updatePerformance(data, today) {
       };
     }
 
-    if (!ticker || !quote) continue;
+    if (!ticker || !quote) {
+      const existingPrice = Number(signal.performance.currentPrice);
+      if (Number.isFinite(existingPrice) && existingPrice > 0) {
+        updateHistoricalChange(signal.performance, existingPrice, ticker ? baselines.get(ticker) : null);
+        signal.performance.cumulativeStartDate ||= today;
+        signal.performance.cumulativeStartPrice ??= existingPrice;
+        const cumulativeBasePrice = Number(signal.performance.cumulativeStartPrice);
+        if (Number.isFinite(cumulativeBasePrice) && cumulativeBasePrice > 0) {
+          signal.performance.cumulativeChangePct = ((existingPrice - cumulativeBasePrice) / cumulativeBasePrice) * 100;
+        }
+      }
+      continue;
+    }
 
     signal.performance.primaryTicker = quote.displaySymbol;
     signal.performance.currency = quote.currency;
     signal.performance.currentPrice = quote.price;
+    signal.performance.previousClose = quote.previousClose ?? signal.performance.previousClose ?? null;
+    signal.performance.dailyChange = quote.dailyChange ?? signal.performance.dailyChange ?? null;
+    signal.performance.dailyChangePct = quote.dailyChangePct ?? signal.performance.dailyChangePct ?? null;
     signal.performance.priceSource = quote.priceSource;
     signal.performance.priceUpdatedAt = quote.priceUpdatedAt;
 
     if (!signal.performance.firstMentionDate && !signal.performance.firstMentionPrice) {
-      signal.performance.firstTrackedDate = today;
-      signal.performance.firstTrackedPrice = quote.price;
+      signal.performance.firstTrackedDate ||= today;
+      signal.performance.firstTrackedPrice ??= quote.price;
     }
 
-    const basePrice = Number(signal.performance.firstMentionPrice ?? signal.performance.firstTrackedPrice);
-    if (Number.isFinite(basePrice) && basePrice > 0) {
-      signal.performance.changePct = ((quote.price - basePrice) / basePrice) * 100;
+    updateHistoricalChange(signal.performance, quote.price, baselines.get(ticker));
+
+    signal.performance.cumulativeStartDate ||= today;
+    signal.performance.cumulativeStartPrice ??= quote.price;
+    const cumulativeBasePrice = Number(signal.performance.cumulativeStartPrice);
+    if (Number.isFinite(cumulativeBasePrice) && cumulativeBasePrice > 0) {
+      signal.performance.cumulativeChangePct = ((quote.price - cumulativeBasePrice) / cumulativeBasePrice) * 100;
     }
   }
 }

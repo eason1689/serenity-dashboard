@@ -1,0 +1,83 @@
+{
+  "updatedAt": "2026-06-05T03:40:00.000Z",
+  "sourceNote": "逐日摘要独立维护；股票价格与涨跌幅仍以 signals.json 中的行情字段为准。",
+  "digests": [
+    {
+      "date": "2026-06-04",
+      "tweetCount": 8,
+      "entityCount": 7,
+      "status": "待复核",
+      "summary": [
+        "重点讨论 AI ASIC、TPU 供应链和超大规模云厂商采购节奏，认为市场对部分管理层评论存在误读。",
+        "对 MediaTek 受益于 Google TPU 订单保持高关注，同时把 Broadcom、Marvell 等 ASIC 相关公司放在同一条供给链里观察。",
+        "对 Qualcomm 的中国敞口偏谨慎，但认可其光子学并购方向。",
+        "提到加密相关股票和现货 ETF 的波段机会，同时提示流动性与政策因素会影响 HOOD、COIN 等标的。",
+        "继续把上游半导体和光子学供应链视作核心瓶颈，CPO 商业化节奏则偏向 2028 年后。"
+      ],
+      "entities": [
+        { "ticker": "2454.TW", "label": "MediaTek", "stance": "强看多", "dimension": "个股", "confidence": "AI ASIC 受益方" },
+        { "ticker": "AVGO", "label": "Broadcom", "stance": "看多", "dimension": "个股", "confidence": "ASIC 平台" },
+        { "ticker": "MRVL", "label": "Marvell", "stance": "看多", "dimension": "个股", "confidence": "ASIC / CPO" },
+        { "ticker": "QCOM", "label": "Qualcomm", "stance": "中性", "dimension": "个股", "confidence": "中国敞口" },
+        { "ticker": "HOOD", "label": "Robinhood", "stance": "谨慎", "dimension": "个股", "confidence": "加密交易弹性" },
+        { "ticker": "SIVE", "stance": "强看多", "dimension": "个股", "confidence": "光子学瓶颈" },
+        { "ticker": "SOI", "label": "Soitec", "stance": "看多", "dimension": "个股", "confidence": "上游材料" }
+      ],
+      "sources": 8
+    },
+    {
+      "date": "2026-06-01",
+      "tweetCount": 5,
+      "entityCount": 4,
+      "status": "已聚合",
+      "summary": [
+        "复盘 Nippon Chemical 相关投资剧本，强调小市值关键材料供应商在 AI 基础设施链条中的杠杆。",
+        "继续看好 AAOI，核心逻辑是美国本土光通信制造、激光器瓶颈和收入爬坡。",
+        "围绕 NVIDIA GTC / Computex 的下一阶段 AI 瓶颈做预告，线索仍指向光学、材料和散热相关环节。",
+        "对 Shunsin 的短期涨幅略显不满，但仍把台湾光学生态纳入观察。"
+      ],
+      "entities": [
+        { "ticker": "Nippon Chemical", "stance": "强看多", "dimension": "个股", "confidence": "日本材料瓶颈" },
+        { "ticker": "AAOI", "stance": "强看多", "dimension": "个股", "confidence": "美国光通信制造" },
+        { "ticker": "NVDA", "label": "NVIDIA", "stance": "看多", "dimension": "个股", "confidence": "AI 瓶颈催化" },
+        { "ticker": "Shunsin", "stance": "谨慎", "dimension": "个股", "confidence": "台湾光学股" }
+      ],
+      "sources": 5
+    },
+    {
+      "date": "2026-05-31",
+      "tweetCount": 4,
+      "entityCount": 3,
+      "status": "已聚合",
+      "summary": [
+        "提出围绕供应链瓶颈的投资框架，把 AXTI、SOI、SIVE 等上游节点作为重点。",
+        "强调要提前判断技术架构变化，在市场普遍低估光通信时寻找高弹性标的。",
+        "对 ARM 维持强关注，理由包括 AI CPU 需求、NVDA ARM 处理器和 ASIC 服务器占比提升。"
+      ],
+      "entities": [
+        { "ticker": "AXTI", "stance": "强看多", "dimension": "个股", "confidence": "InP 衬底瓶颈" },
+        { "ticker": "SIVE", "stance": "强看多", "dimension": "个股", "confidence": "光子学主线" },
+        { "ticker": "ARM", "stance": "强看多", "dimension": "个股", "confidence": "AI CPU 叙事" }
+      ],
+      "sources": 4
+    },
+    {
+      "date": "2026-05-30",
+      "tweetCount": 13,
+      "entityCount": 4,
+      "status": "已聚合",
+      "summary": [
+        "继续围绕 AAOI 和 SIVE 展开光通信与 CPO 产业链讨论，重点是产能、毛利率和美国供应链属性。",
+        "提到 SIVE 与 Jabil 关系、潜在大型客户映射，以及纳斯达克上市和 CHIPS 法案相关估值重估。",
+        "讨论 CPO 交换机、NVDA 供应链和部分非 AI 股票误买/情绪交易现象。"
+      ],
+      "entities": [
+        { "ticker": "AAOI", "stance": "强看多", "dimension": "个股", "confidence": "产能爬坡" },
+        { "ticker": "SIVE", "stance": "强看多", "dimension": "个股", "confidence": "CPO 激光器" },
+        { "ticker": "NVDA", "stance": "中性", "dimension": "个股", "confidence": "供应链锚点" },
+        { "ticker": "JBL", "stance": "看多", "dimension": "个股", "confidence": "组装供应链" }
+      ],
+      "sources": 13
+    }
+  ]
+}
