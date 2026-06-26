@@ -6,8 +6,8 @@
       "lastDeviation": null
     },
     "weak": {
-      "armed": false,
-      "lastDeviation": -1.5039258671189453
+      "armed": true,
+      "lastDeviation": null
     }
   }
 }
