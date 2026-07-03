@@ -10,7 +10,7 @@
     "avatar": "avatar-serenity.png"
   },
   "summary": {
-    "date": "2026-06-03 至 2026-07-03",
+    "date": "2026-06-04 至 2026-07-04",
     "totalItems": 63,
     "filteredItems": 23,
     "published": 23,
@@ -80,19 +80,19 @@
         "primaryTicker": "SIVE.ST",
         "firstMentionDate": null,
         "firstMentionPrice": null,
-        "currentPrice": 57,
-        "changePct": 1781.1881365746615,
+        "currentPrice": 56.3,
+        "changePct": 1758.085826125499,
         "currency": "SEK",
         "priceSource": "Yahoo Finance",
-        "priceUpdatedAt": "2026-07-03T14:55:42.000Z",
+        "priceUpdatedAt": "2026-07-03T15:29:48.000Z",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "backfillStartDate": "2026-03-01",
         "backfillStatus": "price-unavailable",
         "backfillCandidateDate": "2026-05-24",
         "backfillNote": "已找到候选日期，但行情源未返回可用历史收盘价；未覆盖首次提及日期和价格。",
         "previousClose": 65.55,
-        "dailyChange": -8.549999999999997,
-        "dailyChangePct": -13.043478260869563,
+        "dailyChange": -9.25,
+        "dailyChangePct": -14.111365369946608,
         "firstTrackedDate": "2026-06-05",
         "firstTrackedPrice": 86.75,
         "baselineRequestedDate": "2026-03-01",
@@ -101,7 +101,7 @@
         "baselinePriceSource": "Yahoo Finance chart daily close",
         "cumulativeStartDate": "2026-06-05",
         "cumulativeStartPrice": 86.75,
-        "cumulativeChangePct": -34.293948126801155
+        "cumulativeChangePct": -35.100864553314125
       }
     },
     {
@@ -308,7 +308,7 @@
         "changePct": 176.47868023018054,
         "currency": "EUR",
         "priceSource": "Yahoo Finance",
-        "priceUpdatedAt": "2026-07-03T14:37:43.000Z",
+        "priceUpdatedAt": "2026-07-03T15:35:12.000Z",
         "note": "历史首次提及日期和价格需要按原推回填；自动化会从新增标的开始记录首次追踪价。",
         "firstTrackedDate": "2026-05-25",
         "firstTrackedPrice": 24.8,
@@ -978,7 +978,7 @@
     }
   ],
   "automation": {
-    "lastRunAt": "2026-07-03T14:55:45.005Z",
+    "lastRunAt": "2026-07-03T17:00:20.792Z",
     "account": "@aleabitoreddit",
     "sourceStatus": [
       {
@@ -1015,20 +1015,20 @@
     "SIVE": {
       "primaryTicker": "SIVE.ST",
       "currency": "SEK",
-      "currentPrice": 57,
+      "currentPrice": 56.3,
       "priceSource": "Yahoo Finance",
-      "priceUpdatedAt": "2026-07-03T14:55:42.000Z",
+      "priceUpdatedAt": "2026-07-03T15:29:48.000Z",
       "previousClose": 65.55,
-      "dailyChange": -8.549999999999997,
-      "dailyChangePct": -13.043478260869563,
+      "dailyChange": -9.25,
+      "dailyChangePct": -14.111365369946608,
       "baselineRequestedDate": "2026-03-01",
       "baselineStartDate": "2026-03-02",
       "baselineStartPrice": 3.0299999713897705,
       "baselinePriceSource": "Yahoo Finance chart daily close",
-      "changePct": 1781.1881365746615,
+      "changePct": 1758.085826125499,
       "cumulativeStartDate": "2026-06-05",
       "cumulativeStartPrice": 86.75,
-      "cumulativeChangePct": -34.293948126801155
+      "cumulativeChangePct": -35.100864553314125
     },
     "AAOI": {
       "primaryTicker": "AAOI",
@@ -1138,7 +1138,7 @@
       "currency": "EUR",
       "currentPrice": 20.1,
       "priceSource": "Yahoo Finance",
-      "priceUpdatedAt": "2026-07-03T14:37:43.000Z",
+      "priceUpdatedAt": "2026-07-03T15:35:12.000Z",
       "baselineRequestedDate": "2026-03-01",
       "baselineStartDate": "2026-03-02",
       "baselineStartPrice": 7.269999980926514,
@@ -1830,20 +1830,20 @@
     "SOI": {
       "primaryTicker": "SOI.PA",
       "currency": "EUR",
-      "currentPrice": 117.2,
+      "currentPrice": 117.3,
       "previousClose": 114.3,
-      "dailyChange": 2.9000000000000057,
-      "dailyChangePct": 2.537182852143487,
+      "dailyChange": 3,
+      "dailyChangePct": 2.6246719160104988,
       "priceSource": "Yahoo Finance",
-      "priceUpdatedAt": "2026-07-03T14:40:42.000Z",
+      "priceUpdatedAt": "2026-07-03T15:35:13.000Z",
       "baselineRequestedDate": "2026-03-01",
       "baselineStartDate": "2026-03-02",
       "baselineStartPrice": 43.060001373291016,
       "baselinePriceSource": "Yahoo Finance chart daily close",
-      "changePct": 172.1783471021812,
+      "changePct": 172.41058118673934,
       "cumulativeStartDate": "2026-06-05",
       "cumulativeStartPrice": 156.5,
-      "cumulativeChangePct": -25.111821086261983
+      "cumulativeChangePct": -25.047923322683708
     }
   }
 }
