@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-29",
+  "date": "2026-07-30",
   "signals": {
     "strong": {
       "armed": true,
@@ -7,7 +7,7 @@
     },
     "weak": {
       "armed": false,
-      "lastDeviation": -1.203373436731102
+      "lastDeviation": -8.703350817568062
     }
   }
 }
