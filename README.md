@@ -94,6 +94,8 @@ npm run check:signals
 
 `hynix-monitor-watchdog.yml` 检查监控工作流是否超过 15 分钟没有成功运行。它只在故障和恢复状态发生切换时发送 Pushplus，避免重复通知。cron-job.org 使用的 fine-grained token 必须只授权本仓库的 Actions 写权限，token 不得写入仓库或日志。
 
+电脑关机不影响 cron-job.org、GitHub Actions 或 Pushplus；本机 Codex heartbeat 只是每日健康检查，不是主监控。当前架构、密钥轮换、验证命令和故障排查见 [`docs/07709-monitor-runbook.md`](docs/07709-monitor-runbook.md)，设计取舍见 [`docs/superpowers/specs/2026-08-16-hynix-07709-monitor-reliability-design.md`](docs/superpowers/specs/2026-08-16-hynix-07709-monitor-reliability-design.md)。
+
 本地规则测试：
 
 ```bash
