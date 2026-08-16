@@ -87,3 +87,15 @@ npm run check:signals
 ```
 
 `monitor:hynix` 负责 Hynix 07709 deviation monitor；`backfill:first-mentions` 用于回填首次提及价；`brief:ai-spacex` 生成 AI 股票与 SpaceX 每日简报。
+
+### 07709 监控可靠性
+
+`hynix-monitor.yml` 接受 cron-job.org 每 5 分钟发送的 `workflow_dispatch`，并保留 GitHub 原生 `schedule` 作为备用。脚本只在香港时间工作日 `09:30-12:00` 和 `13:00-16:00` 执行行情判断。
+
+`hynix-monitor-watchdog.yml` 检查监控工作流是否超过 15 分钟没有成功运行。它只在故障和恢复状态发生切换时发送 Pushplus，避免重复通知。cron-job.org 使用的 fine-grained token 必须只授权本仓库的 Actions 写权限，token 不得写入仓库或日志。
+
+本地规则测试：
+
+```bash
+npm run test:hynix
+```

@@ -2,6 +2,15 @@ name: Hynix 07709 deviation monitor
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Run the monitor or send a Pushplus smoke test
+        required: false
+        default: monitor
+        type: choice
+        options:
+          - monitor
+          - test_push
   schedule:
     # Every 5 minutes during the broad Hong Kong trading-day window.
     # The script itself skips holidays, lunch break, half-day/halts, and non-trading time.
@@ -12,7 +21,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: hynix-07709-monitor
+  group: hynix-07709-state
   cancel-in-progress: false
 
 jobs:
@@ -30,11 +39,19 @@ jobs:
           node-version: "22"
 
       - name: Monitor 07709 deviation
+        if: github.event_name != 'workflow_dispatch' || inputs.mode != 'test_push'
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: npm run monitor:hynix
 
+      - name: Test Pushplus delivery
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'test_push'
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: npm run test-push:hynix
+
       - name: Commit monitor state
+        if: github.event_name != 'workflow_dispatch' || inputs.mode != 'test_push'
         run: |
           if git diff --quiet -- hynix-monitor-state.json; then
             echo "No monitor state changes to commit."
