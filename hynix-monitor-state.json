@@ -3,7 +3,7 @@
   "signals": {
     "strong": {
       "armed": false,
-      "lastDeviation": 1.4789689859096107
+      "lastDeviation": 2.5762041491566716
     },
     "weak": {
       "armed": true,
