@@ -2,8 +2,8 @@
   "date": "2026-11-23",
   "signals": {
     "strong": {
-      "armed": true,
-      "lastDeviation": null
+      "armed": false,
+      "lastDeviation": 1.544493925543966
     },
     "weak": {
       "armed": true,
